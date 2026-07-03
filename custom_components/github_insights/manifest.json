@@ -1,0 +1,12 @@
+{
+  "domain": "github_insights",
+  "name": "GitHub Insights",
+  "codeowners": ["@ReikanYsora"],
+  "config_flow": true,
+  "documentation": "https://github.com/ReikanYsora/github-insights",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/ReikanYsora/github-insights/issues",
+  "requirements": [],
+  "version": "1.0.0"
+}

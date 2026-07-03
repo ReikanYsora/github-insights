@@ -1,0 +1,33 @@
+{
+  "entity": {
+    "sensor": {
+      "commits": {
+        "default": "mdi:source-commit"
+      },
+      "releases": {
+        "default": "mdi:tag-multiple"
+      },
+      "latest_release": {
+        "default": "mdi:tag"
+      },
+      "latest_release_downloads": {
+        "default": "mdi:download"
+      },
+      "total_downloads": {
+        "default": "mdi:download-multiple"
+      },
+      "stargazers": {
+        "default": "mdi:star"
+      },
+      "followers": {
+        "default": "mdi:account-multiple"
+      },
+      "open_issues": {
+        "default": "mdi:alert-circle-outline"
+      },
+      "closed_issues": {
+        "default": "mdi:check-circle-outline"
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Add a GitHub repository",
+        "description": "Enter a personal access token and the repository to track.",
+        "data": {
+          "access_token": "Access token",
+          "repository": "Repository"
+        },
+        "data_description": {
+          "access_token": "A GitHub personal access token. A fine-grained or classic token with public read access raises the rate limit to 5000 requests per hour.",
+          "repository": "The repository to track, in the owner/name format (for example home-assistant/core)."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Re-authenticate GitHub Insights",
+        "description": "The token for {repository} is no longer valid. Enter a new access token.",
+        "data": {
+          "access_token": "[%key:component::github_insights::config::step::user::data::access_token%]"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "The access token is invalid or lacks the required scopes.",
+      "invalid_repository": "The repository must use the owner/name format.",
+      "repo_not_found": "The repository could not be found with this token.",
+      "rate_limit": "The GitHub API rate limit is exhausted. Try again later.",
+      "cannot_connect": "Failed to connect to the GitHub API."
+    },
+    "abort": {
+      "already_configured": "[%key:common::config_flow::abort::already_configured_device%]",
+      "reauth_successful": "[%key:common::config_flow::abort::reauth_successful%]"
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {
+        "name": "Commits"
+      },
+      "releases": {
+        "name": "Releases"
+      },
+      "latest_release": {
+        "name": "Latest release"
+      },
+      "latest_release_downloads": {
+        "name": "Latest release downloads"
+      },
+      "total_downloads": {
+        "name": "Total downloads"
+      },
+      "stargazers": {
+        "name": "Stars"
+      },
+      "followers": {
+        "name": "Followers"
+      },
+      "open_issues": {
+        "name": "Open issues"
+      },
+      "closed_issues": {
+        "name": "Closed issues"
+      }
+    }
+  }
+}

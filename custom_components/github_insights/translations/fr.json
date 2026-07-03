@@ -1,0 +1,67 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Ajouter un dépôt GitHub",
+        "description": "Saisissez un jeton d'accès personnel et le dépôt à suivre.",
+        "data": {
+          "access_token": "Jeton d'accès",
+          "repository": "Dépôt"
+        },
+        "data_description": {
+          "access_token": "Un jeton d'accès personnel GitHub. Un jeton (fine-grained ou classique) avec accès en lecture public porte la limite à 5000 requêtes par heure.",
+          "repository": "Le dépôt à suivre, au format propriétaire/nom (par exemple home-assistant/core)."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Ré-authentifier GitHub Insights",
+        "description": "Le jeton pour {repository} n'est plus valide. Saisissez un nouveau jeton d'accès.",
+        "data": {
+          "access_token": "Jeton d'accès"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Le jeton d'accès est invalide ou ne dispose pas des autorisations requises.",
+      "invalid_repository": "Le dépôt doit utiliser le format propriétaire/nom.",
+      "repo_not_found": "Le dépôt est introuvable avec ce jeton.",
+      "rate_limit": "La limite de l'API GitHub est atteinte. Réessayez plus tard.",
+      "cannot_connect": "Échec de la connexion à l'API GitHub."
+    },
+    "abort": {
+      "already_configured": "Ce dépôt est déjà configuré.",
+      "reauth_successful": "La ré-authentification a réussi."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {
+        "name": "Commits"
+      },
+      "releases": {
+        "name": "Releases"
+      },
+      "latest_release": {
+        "name": "Dernière release"
+      },
+      "latest_release_downloads": {
+        "name": "Téléchargements de la dernière release"
+      },
+      "total_downloads": {
+        "name": "Téléchargements totaux"
+      },
+      "stargazers": {
+        "name": "Étoiles"
+      },
+      "followers": {
+        "name": "Abonnés"
+      },
+      "open_issues": {
+        "name": "Issues ouvertes"
+      },
+      "closed_issues": {
+        "name": "Issues fermées"
+      }
+    }
+  }
+}
