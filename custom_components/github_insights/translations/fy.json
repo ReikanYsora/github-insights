@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "In GitHub-repository tafoegje",
+        "description": "Fier in persoanlik tagongstoken en de repository yn dy't folge wurde moat.",
+        "data": {
+          "access_token": "Tagongstoken",
+          "repository": "Repository"
+        },
+        "data_description": {
+          "access_token": "In persoanlik GitHub-tagongstoken. In fynkorrelich of klassyk token mei publike lêstagong ferheget de limyt nei 5000 fersiken de oere.",
+          "repository": "De repository dy't folge wurde moat, yn de opmaak eigner/namme (bygelyks home-assistant/core)."
+        }
+      },
+      "reauth_confirm": {
+        "title": "GitHub Insights opnij ferifiearje",
+        "description": "It token foar {repository} is net mear jildich. Fier in nij tagongstoken yn.",
+        "data": {
+          "access_token": "Tagongstoken"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "It tagongstoken is ûnjildich of hat net de fereaske rjochten.",
+      "invalid_repository": "De repository moat de opmaak eigner/namme brûke.",
+      "repo_not_found": "De repository koe net fûn wurde mei dit token.",
+      "rate_limit": "De frekwinsjelimyt fan de GitHub API is útput. Besykje it letter opnij.",
+      "cannot_connect": "Ferbining mei de GitHub API is mislearre."
+    },
+    "abort": {
+      "already_configured": "Dizze repository is al konfigurearre.",
+      "reauth_successful": "De opnije ferifikaasje is slagge."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "GitHub Insights-opsjes",
+        "description": "Pas oan hoe faak de metriken fan de repository ferfarske wurde.",
+        "data": {
+          "update_interval": "Fernijingsynterval (minuten)"
+        },
+        "data_description": {
+          "update_interval": "Hoe faak de GitHub API befrege wurde moat, yn minuten. It minimum is 1 minút."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "Commits"},
+      "releases": {"name": "Releases"},
+      "latest_release": {"name": "Lêste release"},
+      "latest_release_downloads": {"name": "Downloads lêste release"},
+      "total_downloads": {"name": "Totaal downloads"},
+      "stargazers": {"name": "Stjerren"},
+      "followers": {"name": "Folgers"},
+      "open_issues": {"name": "Iepen kwestjes"},
+      "closed_issues": {"name": "Sletten kwestjes"}
+    }
+  }
+}

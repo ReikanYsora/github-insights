@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Přidat repozitář GitHub",
+        "description": "Zadejte osobní přístupový token a repozitář, který chcete sledovat.",
+        "data": {
+          "access_token": "Přístupový token",
+          "repository": "Repozitář"
+        },
+        "data_description": {
+          "access_token": "Osobní přístupový token GitHub. Podrobný nebo klasický token s veřejným přístupem pro čtení zvyšuje limit požadavků na 5000 za hodinu.",
+          "repository": "Repozitář, který chcete sledovat, ve formátu vlastník/název (například home-assistant/core)."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Opětovné ověření GitHub Insights",
+        "description": "Token pro {repository} již není platný. Zadejte nový přístupový token.",
+        "data": {
+          "access_token": "Přístupový token"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Přístupový token je neplatný nebo nemá požadovaná oprávnění.",
+      "invalid_repository": "Repozitář musí mít formát vlastník/název.",
+      "repo_not_found": "Repozitář nebyl s tímto tokenem nalezen.",
+      "rate_limit": "Limit požadavků API GitHub byl vyčerpán. Zkuste to znovu později.",
+      "cannot_connect": "Nepodařilo se připojit k API GitHub."
+    },
+    "abort": {
+      "already_configured": "Tento repozitář je již nakonfigurován.",
+      "reauth_successful": "Opětovné ověření bylo úspěšné."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Možnosti GitHub Insights",
+        "description": "Upravte, jak často se obnovují metriky repozitáře.",
+        "data": {
+          "update_interval": "Interval aktualizace (minuty)"
+        },
+        "data_description": {
+          "update_interval": "Jak často se dotazovat API GitHub, v minutách. Minimum je 1 minuta."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "Commity"},
+      "releases": {"name": "Vydání"},
+      "latest_release": {"name": "Nejnovější vydání"},
+      "latest_release_downloads": {"name": "Stažení nejnovějšího vydání"},
+      "total_downloads": {"name": "Celkem stažení"},
+      "stargazers": {"name": "Hvězdy"},
+      "followers": {"name": "Sledující"},
+      "open_issues": {"name": "Otevřené problémy"},
+      "closed_issues": {"name": "Uzavřené problémy"}
+    }
+  }
+}

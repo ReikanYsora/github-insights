@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "GitHub 저장소 추가",
+        "description": "개인 액세스 토큰과 추적할 저장소를 입력하세요.",
+        "data": {
+          "access_token": "액세스 토큰",
+          "repository": "저장소"
+        },
+        "data_description": {
+          "access_token": "GitHub 개인 액세스 토큰입니다. 공개 읽기 액세스 권한이 있는 세분화된 토큰 또는 클래식 토큰을 사용하면 속도 제한이 시간당 5000회 요청으로 늘어납니다.",
+          "repository": "추적할 저장소로, owner/name 형식으로 입력합니다(예: home-assistant/core)."
+        }
+      },
+      "reauth_confirm": {
+        "title": "GitHub Insights 재인증",
+        "description": "{repository}의 토큰이 더 이상 유효하지 않습니다. 새 액세스 토큰을 입력하세요.",
+        "data": {
+          "access_token": "액세스 토큰"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "액세스 토큰이 유효하지 않거나 필요한 범위가 없습니다.",
+      "invalid_repository": "저장소는 owner/name 형식을 사용해야 합니다.",
+      "repo_not_found": "이 토큰으로 저장소를 찾을 수 없습니다.",
+      "rate_limit": "GitHub API 속도 제한이 소진되었습니다. 나중에 다시 시도하세요.",
+      "cannot_connect": "GitHub API에 연결하지 못했습니다."
+    },
+    "abort": {
+      "already_configured": "이 저장소는 이미 구성되어 있습니다.",
+      "reauth_successful": "재인증에 성공했습니다."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "GitHub Insights 옵션",
+        "description": "저장소 지표를 새로 고치는 빈도를 조정합니다.",
+        "data": {
+          "update_interval": "업데이트 간격(분)"
+        },
+        "data_description": {
+          "update_interval": "GitHub API를 폴링하는 빈도(분 단위)입니다. 최소값은 1분입니다."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "커밋"},
+      "releases": {"name": "릴리스"},
+      "latest_release": {"name": "최신 릴리스"},
+      "latest_release_downloads": {"name": "최신 릴리스 다운로드"},
+      "total_downloads": {"name": "총 다운로드"},
+      "stargazers": {"name": "스타"},
+      "followers": {"name": "팔로워"},
+      "open_issues": {"name": "열린 이슈"},
+      "closed_issues": {"name": "닫힌 이슈"}
+    }
+  }
+}

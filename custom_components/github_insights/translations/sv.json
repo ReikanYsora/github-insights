@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Lägg till ett GitHub-arkiv",
+        "description": "Ange en personlig åtkomsttoken och arkivet som ska följas.",
+        "data": {
+          "access_token": "Åtkomsttoken",
+          "repository": "Arkiv"
+        },
+        "data_description": {
+          "access_token": "En personlig GitHub-åtkomsttoken. En finkornig eller klassisk token med offentlig läsåtkomst höjer hastighetsgränsen till 5000 förfrågningar per timme.",
+          "repository": "Arkivet som ska följas, i formatet ägare/namn (till exempel home-assistant/core)."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Autentisera GitHub Insights på nytt",
+        "description": "Token för {repository} är inte längre giltig. Ange en ny åtkomsttoken.",
+        "data": {
+          "access_token": "Åtkomsttoken"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Åtkomsttoken är ogiltig eller saknar de nödvändiga behörigheterna.",
+      "invalid_repository": "Arkivet måste använda formatet ägare/namn.",
+      "repo_not_found": "Arkivet kunde inte hittas med denna token.",
+      "rate_limit": "GitHub API-hastighetsgränsen är förbrukad. Försök igen senare.",
+      "cannot_connect": "Det gick inte att ansluta till GitHub API."
+    },
+    "abort": {
+      "already_configured": "Detta arkiv är redan konfigurerat.",
+      "reauth_successful": "Återautentiseringen lyckades."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Alternativ för GitHub Insights",
+        "description": "Justera hur ofta arkivets mätvärden uppdateras.",
+        "data": {
+          "update_interval": "Uppdateringsintervall (minuter)"
+        },
+        "data_description": {
+          "update_interval": "Hur ofta GitHub API ska anropas, i minuter. Minimum är 1 minut."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "Commits"},
+      "releases": {"name": "Utgåvor"},
+      "latest_release": {"name": "Senaste utgåvan"},
+      "latest_release_downloads": {"name": "Nedladdningar av senaste utgåvan"},
+      "total_downloads": {"name": "Totalt antal nedladdningar"},
+      "stargazers": {"name": "Stjärnor"},
+      "followers": {"name": "Följare"},
+      "open_issues": {"name": "Öppna ärenden"},
+      "closed_issues": {"name": "Stängda ärenden"}
+    }
+  }
+}

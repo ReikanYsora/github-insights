@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from datetime import timedelta
 from http import HTTPStatus
 
 from homeassistant.config_entries import SOURCE_USER
@@ -12,7 +13,11 @@ import pytest
 from pytest_homeassistant_custom_component.common import MockConfigEntry
 from pytest_homeassistant_custom_component.test_util.aiohttp import AiohttpClientMocker
 
-from custom_components.github_insights.const import CONF_REPOSITORY, DOMAIN
+from custom_components.github_insights.const import (
+    CONF_REPOSITORY,
+    CONF_UPDATE_INTERVAL,
+    DOMAIN,
+)
 
 from .conftest import API, REPOSITORY, TOKEN, mock_github_api
 
@@ -146,5 +151,33 @@ async def test_reauth_flow(
     # The successful reauth reloads the entry, which starts a live coordinator.
     # Let the reload finish and unload it so no polling timer lingers.
     await hass.async_block_till_done()
+    await hass.config_entries.async_unload(mock_config_entry.entry_id)
+    await hass.async_block_till_done()
+
+
+async def test_options_flow(
+    hass: HomeAssistant,
+    aioclient_mock: AiohttpClientMocker,
+    mock_config_entry: MockConfigEntry,
+) -> None:
+    """The options flow updates the polling interval and reloads the entry."""
+    mock_github_api(aioclient_mock)
+    mock_config_entry.add_to_hass(hass)
+    await hass.config_entries.async_setup(mock_config_entry.entry_id)
+    await hass.async_block_till_done()
+
+    result = await hass.config_entries.options.async_init(mock_config_entry.entry_id)
+    assert result["type"] is FlowResultType.FORM
+    assert result["step_id"] == "init"
+
+    result = await hass.config_entries.options.async_configure(
+        result["flow_id"], {CONF_UPDATE_INTERVAL: 3}
+    )
+    await hass.async_block_till_done()
+
+    assert result["type"] is FlowResultType.CREATE_ENTRY
+    assert mock_config_entry.options == {CONF_UPDATE_INTERVAL: 3}
+    assert mock_config_entry.runtime_data.update_interval == timedelta(minutes=3)
+
     await hass.config_entries.async_unload(mock_config_entry.entry_id)
     await hass.async_block_till_done()

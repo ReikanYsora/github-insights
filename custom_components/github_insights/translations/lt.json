@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Pridėti GitHub saugyklą",
+        "description": "Įveskite asmeninį prieigos raktą ir stebimą saugyklą.",
+        "data": {
+          "access_token": "Prieigos raktas",
+          "repository": "Saugykla"
+        },
+        "data_description": {
+          "access_token": "Asmeninis GitHub prieigos raktas. Tikslusis arba klasikinis raktas su viešąja skaitymo prieiga padidina užklausų limitą iki 5000 užklausų per valandą.",
+          "repository": "Stebima saugykla formatu savininkas/pavadinimas (pavyzdžiui, home-assistant/core)."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Iš naujo patvirtinti GitHub Insights tapatybę",
+        "description": "Saugyklos {repository} raktas nebegalioja. Įveskite naują prieigos raktą.",
+        "data": {
+          "access_token": "Prieigos raktas"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Prieigos raktas netinkamas arba jam trūksta reikalingų leidimų.",
+      "invalid_repository": "Saugykla turi naudoti formatą savininkas/pavadinimas.",
+      "repo_not_found": "Su šiuo raktu saugyklos rasti nepavyko.",
+      "rate_limit": "GitHub API užklausų limitas išnaudotas. Bandykite vėliau.",
+      "cannot_connect": "Nepavyko prisijungti prie GitHub API."
+    },
+    "abort": {
+      "already_configured": "Ši saugykla jau sukonfigūruota.",
+      "reauth_successful": "Pakartotinis tapatybės patvirtinimas pavyko."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "GitHub Insights parinktys",
+        "description": "Nustatykite, kaip dažnai atnaujinami saugyklos rodikliai.",
+        "data": {
+          "update_interval": "Atnaujinimo intervalas (minutėmis)"
+        },
+        "data_description": {
+          "update_interval": "Kaip dažnai vykdyti GitHub API užklausas, minutėmis. Mažiausia reikšmė yra 1 minutė."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "Įrašai"},
+      "releases": {"name": "Leidimai"},
+      "latest_release": {"name": "Naujausias leidimas"},
+      "latest_release_downloads": {"name": "Naujausio leidimo atsisiuntimai"},
+      "total_downloads": {"name": "Iš viso atsisiuntimų"},
+      "stargazers": {"name": "Žvaigždutės"},
+      "followers": {"name": "Sekėjai"},
+      "open_issues": {"name": "Atviros problemos"},
+      "closed_issues": {"name": "Uždarytos problemos"}
+    }
+  }
+}

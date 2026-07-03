@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Añadir un repositorio de GitHub",
+        "description": "Introduce un token de acceso personal y el repositorio que quieres monitorizar.",
+        "data": {
+          "access_token": "Token de acceso",
+          "repository": "Repositorio"
+        },
+        "data_description": {
+          "access_token": "Un token de acceso personal de GitHub. Un token granular o clásico con acceso de lectura público aumenta el límite de peticiones a 5000 por hora.",
+          "repository": "El repositorio que quieres monitorizar, en el formato propietario/nombre (por ejemplo home-assistant/core)."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Volver a autenticar GitHub Insights",
+        "description": "El token de {repository} ya no es válido. Introduce un nuevo token de acceso.",
+        "data": {
+          "access_token": "Token de acceso"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "El token de acceso no es válido o carece de los permisos necesarios.",
+      "invalid_repository": "El repositorio debe usar el formato propietario/nombre.",
+      "repo_not_found": "No se ha encontrado el repositorio con este token.",
+      "rate_limit": "Se ha agotado el límite de peticiones de la API de GitHub. Inténtalo de nuevo más tarde.",
+      "cannot_connect": "No se ha podido conectar con la API de GitHub."
+    },
+    "abort": {
+      "already_configured": "Este repositorio ya está configurado.",
+      "reauth_successful": "La reautenticación se ha realizado correctamente."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opciones de GitHub Insights",
+        "description": "Ajusta la frecuencia con la que se actualizan las métricas del repositorio.",
+        "data": {
+          "update_interval": "Intervalo de actualización (minutos)"
+        },
+        "data_description": {
+          "update_interval": "Con qué frecuencia se consulta la API de GitHub, en minutos. El mínimo es 1 minuto."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "Commits"},
+      "releases": {"name": "Versiones"},
+      "latest_release": {"name": "Última versión"},
+      "latest_release_downloads": {"name": "Descargas de la última versión"},
+      "total_downloads": {"name": "Descargas totales"},
+      "stargazers": {"name": "Estrellas"},
+      "followers": {"name": "Seguidores"},
+      "open_issues": {"name": "Incidencias abiertas"},
+      "closed_issues": {"name": "Incidencias cerradas"}
+    }
+  }
+}

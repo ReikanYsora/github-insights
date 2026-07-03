@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Afegeix un repositori de GitHub",
+        "description": "Introdueix un token d'accés personal i el repositori que vols supervisar.",
+        "data": {
+          "access_token": "Token d'accés",
+          "repository": "Repositori"
+        },
+        "data_description": {
+          "access_token": "Un token d'accés personal de GitHub. Un token granular o clàssic amb accés de lectura públic augmenta el límit de peticions a 5000 per hora.",
+          "repository": "El repositori que vols supervisar, en el format propietari/nom (per exemple home-assistant/core)."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Torna a autenticar GitHub Insights",
+        "description": "El token de {repository} ja no és vàlid. Introdueix un token d'accés nou.",
+        "data": {
+          "access_token": "Token d'accés"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "El token d'accés no és vàlid o no té els permisos necessaris.",
+      "invalid_repository": "El repositori ha d'usar el format propietari/nom.",
+      "repo_not_found": "No s'ha pogut trobar el repositori amb aquest token.",
+      "rate_limit": "S'ha esgotat el límit de peticions de l'API de GitHub. Torna-ho a provar més tard.",
+      "cannot_connect": "No s'ha pogut connectar amb l'API de GitHub."
+    },
+    "abort": {
+      "already_configured": "Aquest repositori ja està configurat.",
+      "reauth_successful": "La reautenticació s'ha completat correctament."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opcions de GitHub Insights",
+        "description": "Ajusta la freqüència amb què s'actualitzen les mètriques del repositori.",
+        "data": {
+          "update_interval": "Interval d'actualització (minuts)"
+        },
+        "data_description": {
+          "update_interval": "Amb quina freqüència es consulta l'API de GitHub, en minuts. El mínim és 1 minut."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "Commits"},
+      "releases": {"name": "Versions"},
+      "latest_release": {"name": "Darrera versió"},
+      "latest_release_downloads": {"name": "Baixades de la darrera versió"},
+      "total_downloads": {"name": "Baixades totals"},
+      "stargazers": {"name": "Estrelles"},
+      "followers": {"name": "Seguidors"},
+      "open_issues": {"name": "Incidències obertes"},
+      "closed_issues": {"name": "Incidències tancades"}
+    }
+  }
+}

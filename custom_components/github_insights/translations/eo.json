@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Aldoni GitHub-deponejon",
+        "description": "Enigu personan alirĵetonon kaj la deponejon por sekvi.",
+        "data": {
+          "access_token": "Alirĵetono",
+          "repository": "Deponejo"
+        },
+        "data_description": {
+          "access_token": "Persona GitHub-alirĵetono. Detala aŭ klasika ĵetono kun publika legaliro altigas la limon al 5000 petoj po horo.",
+          "repository": "La deponejo por sekvi, en la formo posedanto/nomo (ekzemple home-assistant/core)."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Reaŭtentikigi GitHub Insights",
+        "description": "La ĵetono por {repository} ne plu validas. Enigu novan alirĵetonon.",
+        "data": {
+          "access_token": "Alirĵetono"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "La alirĵetono estas nevalida aŭ mankas la necesaj permesoj.",
+      "invalid_repository": "La deponejo devas uzi la formon posedanto/nomo.",
+      "repo_not_found": "La deponejo ne troveblis per ĉi tiu ĵetono.",
+      "rate_limit": "La petlimo de la GitHub API estas elĉerpita. Reprovu poste.",
+      "cannot_connect": "Malsukcesis konektiĝi al la GitHub API."
+    },
+    "abort": {
+      "already_configured": "Ĉi tiu deponejo jam estas agordita.",
+      "reauth_successful": "La reaŭtentikigo sukcesis."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Agordoj de GitHub Insights",
+        "description": "Alĝustigu kiom ofte la metrikoj de la deponejo refreŝiĝas.",
+        "data": {
+          "update_interval": "Ĝisdatiga intervalo (minutoj)"
+        },
+        "data_description": {
+          "update_interval": "Kiom ofte pridemandi la GitHub API, en minutoj. La minimumo estas 1 minuto."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "Enmetoj"},
+      "releases": {"name": "Eldonoj"},
+      "latest_release": {"name": "Plej nova eldono"},
+      "latest_release_downloads": {"name": "Elŝutoj de plej nova eldono"},
+      "total_downloads": {"name": "Sumaj elŝutoj"},
+      "stargazers": {"name": "Steloj"},
+      "followers": {"name": "Sekvantoj"},
+      "open_issues": {"name": "Malfermitaj problemoj"},
+      "closed_issues": {"name": "Fermitaj problemoj"}
+    }
+  }
+}

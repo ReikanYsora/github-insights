@@ -33,6 +33,20 @@
       "reauth_successful": "La ré-authentification a réussi."
     }
   },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Options de GitHub Insights",
+        "description": "Ajustez la fréquence de rafraîchissement des métriques du dépôt.",
+        "data": {
+          "update_interval": "Intervalle de mise à jour (minutes)"
+        },
+        "data_description": {
+          "update_interval": "Fréquence d'interrogation de l'API GitHub, en minutes. Le minimum est de 1 minute."
+        }
+      }
+    }
+  },
   "entity": {
     "sensor": {
       "commits": {

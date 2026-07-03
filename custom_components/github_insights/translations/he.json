@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "הוספת מאגר GitHub",
+        "description": "הזן אסימון גישה אישי ואת המאגר למעקב.",
+        "data": {
+          "access_token": "אסימון גישה",
+          "repository": "מאגר"
+        },
+        "data_description": {
+          "access_token": "אסימון גישה אישי של GitHub. אסימון מפורט או קלאסי עם הרשאת קריאה ציבורית מעלה את מגבלת הקצב ל-5000 בקשות לשעה.",
+          "repository": "המאגר למעקב, בתבנית בעלים/שם (לדוגמה home-assistant/core)."
+        }
+      },
+      "reauth_confirm": {
+        "title": "אימות מחדש של GitHub Insights",
+        "description": "האסימון עבור {repository} אינו תקף עוד. הזן אסימון גישה חדש.",
+        "data": {
+          "access_token": "אסימון גישה"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "אסימון הגישה אינו תקף או חסר לו ההרשאות הנדרשות.",
+      "invalid_repository": "המאגר חייב להשתמש בתבנית בעלים/שם.",
+      "repo_not_found": "לא ניתן היה למצוא את המאגר באמצעות אסימון זה.",
+      "rate_limit": "מגבלת הקצב של GitHub API מוצתה. נסה שוב מאוחר יותר.",
+      "cannot_connect": "החיבור ל-GitHub API נכשל."
+    },
+    "abort": {
+      "already_configured": "מאגר זה כבר מוגדר.",
+      "reauth_successful": "האימות מחדש בוצע בהצלחה."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "אפשרויות GitHub Insights",
+        "description": "התאם את תדירות רענון מדדי המאגר.",
+        "data": {
+          "update_interval": "מרווח עדכון (דקות)"
+        },
+        "data_description": {
+          "update_interval": "באיזו תדירות לתשאל את GitHub API, בדקות. המינימום הוא דקה 1."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "Commits"},
+      "releases": {"name": "מהדורות"},
+      "latest_release": {"name": "מהדורה אחרונה"},
+      "latest_release_downloads": {"name": "הורדות המהדורה האחרונה"},
+      "total_downloads": {"name": "סך ההורדות"},
+      "stargazers": {"name": "כוכבים"},
+      "followers": {"name": "עוקבים"},
+      "open_issues": {"name": "נושאים פתוחים"},
+      "closed_issues": {"name": "נושאים סגורים"}
+    }
+  }
+}

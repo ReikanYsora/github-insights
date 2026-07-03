@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Cuir stórlann GitHub leis",
+        "description": "Cuir isteach ceadchomhartha rochtana pearsanta agus an stórlann le rianú.",
+        "data": {
+          "access_token": "Ceadchomhartha rochtana",
+          "repository": "Stórlann"
+        },
+        "data_description": {
+          "access_token": "Ceadchomhartha rochtana pearsanta GitHub. Ardaíonn ceadchomhartha mionsonraithe nó clasaiceach le rochtain léitheoireachta poiblí an teorainn go 5000 iarratas san uair.",
+          "repository": "An stórlann le rianú, san fhormáid úinéir/ainm (mar shampla home-assistant/core)."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Athfhíordheimhnigh GitHub Insights",
+        "description": "Níl an ceadchomhartha do {repository} bailí a thuilleadh. Cuir isteach ceadchomhartha rochtana nua.",
+        "data": {
+          "access_token": "Ceadchomhartha rochtana"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Tá an ceadchomhartha rochtana neamhbhailí nó níl na ceadanna riachtanacha aige.",
+      "invalid_repository": "Caithfidh an stórlann an fhormáid úinéir/ainm a úsáid.",
+      "repo_not_found": "Níorbh fhéidir an stórlann a aimsiú leis an gceadchomhartha seo.",
+      "rate_limit": "Tá teorainn ráta API GitHub ídithe. Bain triail eile as níos déanaí.",
+      "cannot_connect": "Theip ar an nasc le API GitHub."
+    },
+    "abort": {
+      "already_configured": "Tá an stórlann seo cumraithe cheana féin.",
+      "reauth_successful": "D'éirigh leis an athfhíordheimhniú."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Roghanna GitHub Insights",
+        "description": "Coigeartaigh cé chomh minic is a athnuaitear méadrachtaí na stórlainne.",
+        "data": {
+          "update_interval": "Eatramh nuashonraithe (nóiméid)"
+        },
+        "data_description": {
+          "update_interval": "Cé chomh minic is a dhéanfar ceistiú ar API GitHub, i nóiméid. Is é 1 nóiméad an t-íosmhéid."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "Tiomantais"},
+      "releases": {"name": "Eisiúintí"},
+      "latest_release": {"name": "Eisiúint is déanaí"},
+      "latest_release_downloads": {"name": "Íoslódálacha na heisiúna is déanaí"},
+      "total_downloads": {"name": "Íoslódálacha iomlána"},
+      "stargazers": {"name": "Réaltaí"},
+      "followers": {"name": "Leantóirí"},
+      "open_issues": {"name": "Saincheisteanna oscailte"},
+      "closed_issues": {"name": "Saincheisteanna dúnta"}
+    }
+  }
+}

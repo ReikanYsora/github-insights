@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Dodaj repozytorium GitHub",
+        "description": "Wprowadź osobisty token dostępu oraz repozytorium do śledzenia.",
+        "data": {
+          "access_token": "Token dostępu",
+          "repository": "Repozytorium"
+        },
+        "data_description": {
+          "access_token": "Osobisty token dostępu GitHub. Token szczegółowy lub klasyczny z dostępem do odczytu publicznego zwiększa limit żądań do 5000 na godzinę.",
+          "repository": "Repozytorium do śledzenia w formacie właściciel/nazwa (na przykład home-assistant/core)."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Ponowne uwierzytelnienie GitHub Insights",
+        "description": "Token dla {repository} nie jest już prawidłowy. Wprowadź nowy token dostępu.",
+        "data": {
+          "access_token": "Token dostępu"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Token dostępu jest nieprawidłowy lub nie ma wymaganych uprawnień.",
+      "invalid_repository": "Repozytorium musi mieć format właściciel/nazwa.",
+      "repo_not_found": "Nie znaleziono repozytorium przy użyciu tego tokenu.",
+      "rate_limit": "Limit żądań API GitHub został wyczerpany. Spróbuj ponownie później.",
+      "cannot_connect": "Nie udało się połączyć z API GitHub."
+    },
+    "abort": {
+      "already_configured": "To repozytorium jest już skonfigurowane.",
+      "reauth_successful": "Ponowne uwierzytelnienie zakończyło się powodzeniem."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opcje GitHub Insights",
+        "description": "Dostosuj częstotliwość odświeżania metryk repozytorium.",
+        "data": {
+          "update_interval": "Interwał aktualizacji (minuty)"
+        },
+        "data_description": {
+          "update_interval": "Jak często odpytywać API GitHub, w minutach. Minimum to 1 minuta."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "Commity"},
+      "releases": {"name": "Wydania"},
+      "latest_release": {"name": "Najnowsze wydanie"},
+      "latest_release_downloads": {"name": "Pobrania najnowszego wydania"},
+      "total_downloads": {"name": "Łączna liczba pobrań"},
+      "stargazers": {"name": "Gwiazdki"},
+      "followers": {"name": "Obserwujący"},
+      "open_issues": {"name": "Otwarte zgłoszenia"},
+      "closed_issues": {"name": "Zamknięte zgłoszenia"}
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Thêm kho lưu trữ GitHub",
+        "description": "Nhập mã thông báo truy cập cá nhân và kho lưu trữ cần theo dõi.",
+        "data": {
+          "access_token": "Mã thông báo truy cập",
+          "repository": "Kho lưu trữ"
+        },
+        "data_description": {
+          "access_token": "Mã thông báo truy cập cá nhân GitHub. Mã thông báo chi tiết hoặc cổ điển có quyền đọc công khai sẽ nâng giới hạn tốc độ lên 5000 yêu cầu mỗi giờ.",
+          "repository": "Kho lưu trữ cần theo dõi, theo định dạng owner/name (ví dụ home-assistant/core)."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Xác thực lại GitHub Insights",
+        "description": "Mã thông báo cho {repository} không còn hợp lệ. Nhập mã thông báo truy cập mới.",
+        "data": {
+          "access_token": "Mã thông báo truy cập"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Mã thông báo truy cập không hợp lệ hoặc thiếu phạm vi cần thiết.",
+      "invalid_repository": "Kho lưu trữ phải sử dụng định dạng owner/name.",
+      "repo_not_found": "Không tìm thấy kho lưu trữ với mã thông báo này.",
+      "rate_limit": "Giới hạn tốc độ của GitHub API đã cạn kiệt. Vui lòng thử lại sau.",
+      "cannot_connect": "Không thể kết nối với GitHub API."
+    },
+    "abort": {
+      "already_configured": "Kho lưu trữ này đã được cấu hình.",
+      "reauth_successful": "Xác thực lại thành công."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Tùy chọn GitHub Insights",
+        "description": "Điều chỉnh tần suất làm mới các chỉ số của kho lưu trữ.",
+        "data": {
+          "update_interval": "Khoảng thời gian cập nhật (phút)"
+        },
+        "data_description": {
+          "update_interval": "Tần suất truy vấn GitHub API, tính bằng phút. Tối thiểu là 1 phút."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "Lượt commit"},
+      "releases": {"name": "Bản phát hành"},
+      "latest_release": {"name": "Bản phát hành mới nhất"},
+      "latest_release_downloads": {"name": "Lượt tải bản phát hành mới nhất"},
+      "total_downloads": {"name": "Tổng lượt tải"},
+      "stargazers": {"name": "Sao"},
+      "followers": {"name": "Người theo dõi"},
+      "open_issues": {"name": "Vấn đề đang mở"},
+      "closed_issues": {"name": "Vấn đề đã đóng"}
+    }
+  }
+}

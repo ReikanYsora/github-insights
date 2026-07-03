@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "GitHub リポジトリを追加",
+        "description": "個人アクセストークンと追跡するリポジトリを入力してください。",
+        "data": {
+          "access_token": "アクセストークン",
+          "repository": "リポジトリ"
+        },
+        "data_description": {
+          "access_token": "GitHub の個人アクセストークン。パブリック読み取りアクセスを持つ細粒度トークンまたはクラシックトークンを使用すると、レート制限が 1 時間あたり 5000 リクエストに引き上げられます。",
+          "repository": "追跡するリポジトリを owner/name 形式で指定します（例: home-assistant/core）。"
+        }
+      },
+      "reauth_confirm": {
+        "title": "GitHub Insights を再認証",
+        "description": "{repository} のトークンは無効になりました。新しいアクセストークンを入力してください。",
+        "data": {
+          "access_token": "アクセストークン"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "アクセストークンが無効か、必要なスコープがありません。",
+      "invalid_repository": "リポジトリは owner/name 形式で指定する必要があります。",
+      "repo_not_found": "このトークンではリポジトリが見つかりませんでした。",
+      "rate_limit": "GitHub API のレート制限に達しました。しばらくしてから再試行してください。",
+      "cannot_connect": "GitHub API への接続に失敗しました。"
+    },
+    "abort": {
+      "already_configured": "このリポジトリはすでに設定されています。",
+      "reauth_successful": "再認証に成功しました。"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "GitHub Insights オプション",
+        "description": "リポジトリのメトリクスを更新する頻度を調整します。",
+        "data": {
+          "update_interval": "更新間隔（分）"
+        },
+        "data_description": {
+          "update_interval": "GitHub API をポーリングする頻度（分単位）。最小値は 1 分です。"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "コミット"},
+      "releases": {"name": "リリース"},
+      "latest_release": {"name": "最新リリース"},
+      "latest_release_downloads": {"name": "最新リリースのダウンロード数"},
+      "total_downloads": {"name": "総ダウンロード数"},
+      "stargazers": {"name": "スター"},
+      "followers": {"name": "フォロワー"},
+      "open_issues": {"name": "オープンな問題"},
+      "closed_issues": {"name": "クローズした問題"}
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Gehitu GitHub biltegia",
+        "description": "Sartu sarbide-token pertsonal bat eta jarraitu beharreko biltegia.",
+        "data": {
+          "access_token": "Sarbide-tokena",
+          "repository": "Biltegia"
+        },
+        "data_description": {
+          "access_token": "GitHub sarbide-token pertsonal bat. Irakurketa publikorako sarbidea duen token xehe edo klasiko batek muga orduko 5000 eskaeratara igotzen du.",
+          "repository": "Jarraitu beharreko biltegia, jabea/izena formatuan (adibidez home-assistant/core)."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Berrautentifikatu GitHub Insights",
+        "description": "{repository} biltegiaren tokena jada ez da baliozkoa. Sartu sarbide-token berri bat.",
+        "data": {
+          "access_token": "Sarbide-tokena"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Sarbide-tokena baliogabea da edo beharrezko baimenak falta ditu.",
+      "invalid_repository": "Biltegiak jabea/izena formatua erabili behar du.",
+      "repo_not_found": "Ezin izan da biltegia aurkitu token honekin.",
+      "rate_limit": "GitHub API-aren eskaera-muga agortu da. Saiatu berriro geroago.",
+      "cannot_connect": "Ezin izan da GitHub API-arekin konektatu."
+    },
+    "abort": {
+      "already_configured": "Biltegi hau jada konfiguratuta dago.",
+      "reauth_successful": "Berrautentifikazioa ondo egin da."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "GitHub Insights aukerak",
+        "description": "Doitu biltegiaren metrikak zenbatero freskatzen diren.",
+        "data": {
+          "update_interval": "Eguneratze-tartea (minutuak)"
+        },
+        "data_description": {
+          "update_interval": "Zenbatero kontsultatu GitHub API-a, minututan. Gutxienekoa minutu 1 da."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "Commit-ak"},
+      "releases": {"name": "Bertsioak"},
+      "latest_release": {"name": "Azken bertsioa"},
+      "latest_release_downloads": {"name": "Azken bertsioaren deskargak"},
+      "total_downloads": {"name": "Deskargak guztira"},
+      "stargazers": {"name": "Izarrak"},
+      "followers": {"name": "Jarraitzaileak"},
+      "open_issues": {"name": "Arazo irekiak"},
+      "closed_issues": {"name": "Itxitako arazoak"}
+    }
+  }
+}

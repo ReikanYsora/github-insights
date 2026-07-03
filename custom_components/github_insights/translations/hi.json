@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "GitHub रिपॉज़िटरी जोड़ें",
+        "description": "एक व्यक्तिगत एक्सेस टोकन और ट्रैक करने के लिए रिपॉज़िटरी दर्ज करें।",
+        "data": {
+          "access_token": "एक्सेस टोकन",
+          "repository": "रिपॉज़िटरी"
+        },
+        "data_description": {
+          "access_token": "एक GitHub व्यक्तिगत एक्सेस टोकन। सार्वजनिक पढ़ने की पहुँच वाला एक फाइन-ग्रेन्ड या क्लासिक टोकन दर की सीमा को 5000 अनुरोध प्रति घंटा तक बढ़ा देता है।",
+          "repository": "ट्रैक करने के लिए रिपॉज़िटरी, owner/name प्रारूप में (उदाहरण के लिए home-assistant/core)।"
+        }
+      },
+      "reauth_confirm": {
+        "title": "GitHub Insights को पुनः प्रमाणित करें",
+        "description": "{repository} के लिए टोकन अब मान्य नहीं है। एक नया एक्सेस टोकन दर्ज करें।",
+        "data": {
+          "access_token": "एक्सेस टोकन"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "एक्सेस टोकन अमान्य है या आवश्यक स्कोप नहीं रखता।",
+      "invalid_repository": "रिपॉज़िटरी को owner/name प्रारूप का उपयोग करना चाहिए।",
+      "repo_not_found": "इस टोकन के साथ रिपॉज़िटरी नहीं मिल सकी।",
+      "rate_limit": "GitHub API दर सीमा समाप्त हो गई है। बाद में पुनः प्रयास करें।",
+      "cannot_connect": "GitHub API से कनेक्ट करने में विफल।"
+    },
+    "abort": {
+      "already_configured": "यह रिपॉज़िटरी पहले से ही कॉन्फ़िगर की गई है।",
+      "reauth_successful": "पुनः प्रमाणीकरण सफल रहा।"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "GitHub Insights विकल्प",
+        "description": "रिपॉज़िटरी मेट्रिक्स कितनी बार रीफ़्रेश होते हैं, इसे समायोजित करें।",
+        "data": {
+          "update_interval": "अपडेट अंतराल (मिनट)"
+        },
+        "data_description": {
+          "update_interval": "GitHub API को कितनी बार पोल करना है, मिनटों में। न्यूनतम 1 मिनट है।"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "कमिट"},
+      "releases": {"name": "रिलीज़"},
+      "latest_release": {"name": "नवीनतम रिलीज़"},
+      "latest_release_downloads": {"name": "नवीनतम रिलीज़ डाउनलोड"},
+      "total_downloads": {"name": "कुल डाउनलोड"},
+      "stargazers": {"name": "स्टार"},
+      "followers": {"name": "फ़ॉलोअर"},
+      "open_issues": {"name": "खुले इश्यू"},
+      "closed_issues": {"name": "बंद इश्यू"}
+    }
+  }
+}

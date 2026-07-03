@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "E GitHub-Repository zuefüege",
+        "description": "Gib e persönleche Zuegriffstoken und s Repository ii, wo verfolgt werde söll.",
+        "data": {
+          "access_token": "Zuegriffstoken",
+          "repository": "Repository"
+        },
+        "data_description": {
+          "access_token": "E persönleche GitHub-Zuegriffstoken. E fiinkörnige oder klassische Token mit öffentlichem Läsezuegriff erhöht s Limit uf 5000 Aafröge pro Stund.",
+          "repository": "S Repository, wo verfolgt werde söll, im Format Bsitzer/Name (zum Bispil home-assistant/core)."
+        }
+      },
+      "reauth_confirm": {
+        "title": "GitHub Insights neu authentifiziere",
+        "description": "De Token für {repository} isch nüme gültig. Gib en neue Zuegriffstoken ii.",
+        "data": {
+          "access_token": "Zuegriffstoken"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "De Zuegriffstoken isch ungültig oder het nöd di nötige Rächt.",
+      "invalid_repository": "S Repository mues s Format Bsitzer/Name bruuche.",
+      "repo_not_found": "S Repository het mit dem Token nöd chöne gfunde werde.",
+      "rate_limit": "S Aafröge-Limit vo de GitHub API isch uufbruucht. Probier s spöter nomol.",
+      "cannot_connect": "Verbindig zur GitHub API isch fehlgschlage."
+    },
+    "abort": {
+      "already_configured": "Das Repository isch scho konfiguriert.",
+      "reauth_successful": "S neu Authentifiziere isch erfolgriich gsi."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "GitHub Insights-Optione",
+        "description": "Passd aa, wie oft d Metrike vom Repository aktualisiert werded.",
+        "data": {
+          "update_interval": "Aktualisierigsintervall (Minute)"
+        },
+        "data_description": {
+          "update_interval": "Wie oft d GitHub API abgfrögt werde söll, i Minute. S Minimum isch 1 Minute."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "Commits"},
+      "releases": {"name": "Releases"},
+      "latest_release": {"name": "Nöischti Release"},
+      "latest_release_downloads": {"name": "Downloads vo de nöischte Release"},
+      "total_downloads": {"name": "Downloads total"},
+      "stargazers": {"name": "Stärne"},
+      "followers": {"name": "Follower"},
+      "open_issues": {"name": "Offni Probläm"},
+      "closed_issues": {"name": "Gschlossni Probläm"}
+    }
+  }
+}

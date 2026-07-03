@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "إضافة مستودع GitHub",
+        "description": "أدخل رمز وصول شخصي والمستودع المراد تتبعه.",
+        "data": {
+          "access_token": "رمز الوصول",
+          "repository": "المستودع"
+        },
+        "data_description": {
+          "access_token": "رمز وصول شخصي من GitHub. يؤدي الرمز الدقيق أو الكلاسيكي الذي يملك صلاحية القراءة العامة إلى رفع حد المعدل إلى 5000 طلب في الساعة.",
+          "repository": "المستودع المراد تتبعه، بصيغة المالك/الاسم (على سبيل المثال home-assistant/core)."
+        }
+      },
+      "reauth_confirm": {
+        "title": "إعادة مصادقة GitHub Insights",
+        "description": "لم يعد رمز {repository} صالحًا. أدخل رمز وصول جديدًا.",
+        "data": {
+          "access_token": "رمز الوصول"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "رمز الوصول غير صالح أو يفتقر إلى الصلاحيات المطلوبة.",
+      "invalid_repository": "يجب أن يستخدم المستودع صيغة المالك/الاسم.",
+      "repo_not_found": "تعذر العثور على المستودع باستخدام هذا الرمز.",
+      "rate_limit": "تم استنفاد حد معدل واجهة برمجة تطبيقات GitHub. حاول مرة أخرى لاحقًا.",
+      "cannot_connect": "فشل الاتصال بواجهة برمجة تطبيقات GitHub."
+    },
+    "abort": {
+      "already_configured": "تم تكوين هذا المستودع بالفعل.",
+      "reauth_successful": "تمت إعادة المصادقة بنجاح."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "خيارات GitHub Insights",
+        "description": "اضبط عدد مرات تحديث مقاييس المستودع.",
+        "data": {
+          "update_interval": "فترة التحديث (بالدقائق)"
+        },
+        "data_description": {
+          "update_interval": "عدد مرات الاستعلام من واجهة برمجة تطبيقات GitHub، بالدقائق. الحد الأدنى هو دقيقة واحدة."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "الإيداعات"},
+      "releases": {"name": "الإصدارات"},
+      "latest_release": {"name": "أحدث إصدار"},
+      "latest_release_downloads": {"name": "تنزيلات أحدث إصدار"},
+      "total_downloads": {"name": "إجمالي التنزيلات"},
+      "stargazers": {"name": "النجوم"},
+      "followers": {"name": "المتابعون"},
+      "open_issues": {"name": "المشكلات المفتوحة"},
+      "closed_issues": {"name": "المشكلات المغلقة"}
+    }
+  }
+}

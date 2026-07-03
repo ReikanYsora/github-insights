@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "GitHub ریپوزٹری شامل کریں",
+        "description": "ایک ذاتی رسائی ٹوکن اور ٹریک کرنے کے لیے ریپوزٹری درج کریں۔",
+        "data": {
+          "access_token": "رسائی ٹوکن",
+          "repository": "ریپوزٹری"
+        },
+        "data_description": {
+          "access_token": "ایک GitHub ذاتی رسائی ٹوکن۔ عوامی پڑھنے کی رسائی کے ساتھ ایک باریک یا کلاسک ٹوکن شرح کی حد کو 5000 درخواستیں فی گھنٹہ تک بڑھا دیتا ہے۔",
+          "repository": "ٹریک کرنے کے لیے ریپوزٹری، مالک/نام کی شکل میں (مثال کے طور پر home-assistant/core)۔"
+        }
+      },
+      "reauth_confirm": {
+        "title": "GitHub Insights کی دوبارہ توثیق کریں",
+        "description": "{repository} کا ٹوکن اب درست نہیں ہے۔ ایک نیا رسائی ٹوکن درج کریں۔",
+        "data": {
+          "access_token": "رسائی ٹوکن"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "رسائی ٹوکن غلط ہے یا اس میں مطلوبہ دائرہ کار موجود نہیں ہے۔",
+      "invalid_repository": "ریپوزٹری کو مالک/نام کی شکل استعمال کرنی چاہیے۔",
+      "repo_not_found": "اس ٹوکن کے ساتھ ریپوزٹری نہیں مل سکی۔",
+      "rate_limit": "GitHub API کی شرح کی حد ختم ہو گئی ہے۔ بعد میں دوبارہ کوشش کریں۔",
+      "cannot_connect": "GitHub API سے رابطہ ناکام ہو گیا۔"
+    },
+    "abort": {
+      "already_configured": "یہ ریپوزٹری پہلے سے تشکیل شدہ ہے۔",
+      "reauth_successful": "دوبارہ توثیق کامیاب رہی۔"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "GitHub Insights کے اختیارات",
+        "description": "ایڈجسٹ کریں کہ ریپوزٹری میٹرکس کتنی بار تازہ کیے جائیں۔",
+        "data": {
+          "update_interval": "اپ ڈیٹ وقفہ (منٹ)"
+        },
+        "data_description": {
+          "update_interval": "GitHub API سے کتنی بار استفسار کیا جائے، منٹوں میں۔ کم از کم 1 منٹ ہے۔"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "کمٹس"},
+      "releases": {"name": "ریلیزز"},
+      "latest_release": {"name": "تازہ ترین ریلیز"},
+      "latest_release_downloads": {"name": "تازہ ترین ریلیز کے ڈاؤن لوڈز"},
+      "total_downloads": {"name": "کل ڈاؤن لوڈز"},
+      "stargazers": {"name": "ستارے"},
+      "followers": {"name": "پیروکار"},
+      "open_issues": {"name": "کھلے مسائل"},
+      "closed_issues": {"name": "بند مسائل"}
+    }
+  }
+}

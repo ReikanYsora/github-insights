@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Lisää GitHub-tietovarasto",
+        "description": "Anna henkilökohtainen käyttötunnus ja seurattava tietovarasto.",
+        "data": {
+          "access_token": "Käyttötunnus",
+          "repository": "Tietovarasto"
+        },
+        "data_description": {
+          "access_token": "Henkilökohtainen GitHub-käyttötunnus. Tarkennettu tai perinteinen tunnus, jolla on julkinen lukuoikeus, nostaa pyyntörajan 5000 pyyntöön tunnissa.",
+          "repository": "Seurattava tietovarasto muodossa omistaja/nimi (esimerkiksi home-assistant/core)."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Todenna GitHub Insights uudelleen",
+        "description": "Tietovaraston {repository} tunnus ei ole enää voimassa. Anna uusi käyttötunnus.",
+        "data": {
+          "access_token": "Käyttötunnus"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Käyttötunnus on virheellinen tai siltä puuttuvat vaaditut oikeudet.",
+      "invalid_repository": "Tietovaraston on käytettävä muotoa omistaja/nimi.",
+      "repo_not_found": "Tietovarastoa ei löytynyt tällä tunnuksella.",
+      "rate_limit": "GitHub API:n pyyntöraja on ylitetty. Yritä myöhemmin uudelleen.",
+      "cannot_connect": "Yhteyttä GitHub API:iin ei voitu muodostaa."
+    },
+    "abort": {
+      "already_configured": "Tämä tietovarasto on jo määritetty.",
+      "reauth_successful": "Uudelleentodennus onnistui."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "GitHub Insights -asetukset",
+        "description": "Säädä, kuinka usein tietovaraston mittaustiedot päivitetään.",
+        "data": {
+          "update_interval": "Päivitysväli (minuuttia)"
+        },
+        "data_description": {
+          "update_interval": "Kuinka usein GitHub API:ta kysellään, minuutteina. Vähimmäisarvo on 1 minuutti."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "Commitit"},
+      "releases": {"name": "Julkaisut"},
+      "latest_release": {"name": "Viimeisin julkaisu"},
+      "latest_release_downloads": {"name": "Viimeisimmän julkaisun lataukset"},
+      "total_downloads": {"name": "Lataukset yhteensä"},
+      "stargazers": {"name": "Tähdet"},
+      "followers": {"name": "Seuraajat"},
+      "open_issues": {"name": "Avoimet ongelmat"},
+      "closed_issues": {"name": "Suljetut ongelmat"}
+    }
+  }
+}

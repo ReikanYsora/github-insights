@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "افزودن مخزن GitHub",
+        "description": "یک توکن دسترسی شخصی و مخزن مورد نظر برای ردیابی را وارد کنید.",
+        "data": {
+          "access_token": "توکن دسترسی",
+          "repository": "مخزن"
+        },
+        "data_description": {
+          "access_token": "یک توکن دسترسی شخصی GitHub. یک توکن دقیق یا کلاسیک با دسترسی خواندن عمومی، محدودیت نرخ را به 5000 درخواست در ساعت افزایش می‌دهد.",
+          "repository": "مخزن مورد نظر برای ردیابی، با قالب مالک/نام (برای مثال home-assistant/core)."
+        }
+      },
+      "reauth_confirm": {
+        "title": "احراز هویت مجدد GitHub Insights",
+        "description": "توکن مربوط به {repository} دیگر معتبر نیست. یک توکن دسترسی جدید وارد کنید.",
+        "data": {
+          "access_token": "توکن دسترسی"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "توکن دسترسی نامعتبر است یا فاقد مجوزهای لازم است.",
+      "invalid_repository": "مخزن باید از قالب مالک/نام استفاده کند.",
+      "repo_not_found": "مخزن با این توکن یافت نشد.",
+      "rate_limit": "محدودیت نرخ GitHub API به پایان رسیده است. بعداً دوباره تلاش کنید.",
+      "cannot_connect": "اتصال به GitHub API ناموفق بود."
+    },
+    "abort": {
+      "already_configured": "این مخزن از قبل پیکربندی شده است.",
+      "reauth_successful": "احراز هویت مجدد با موفقیت انجام شد."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "گزینه‌های GitHub Insights",
+        "description": "تنظیم کنید که معیارهای مخزن هر چند وقت یک‌بار به‌روزرسانی شوند.",
+        "data": {
+          "update_interval": "بازه به‌روزرسانی (دقیقه)"
+        },
+        "data_description": {
+          "update_interval": "هر چند وقت یک‌بار از GitHub API استعلام گرفته شود، بر حسب دقیقه. حداقل 1 دقیقه است."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "کامیت‌ها"},
+      "releases": {"name": "انتشارها"},
+      "latest_release": {"name": "آخرین انتشار"},
+      "latest_release_downloads": {"name": "دانلودهای آخرین انتشار"},
+      "total_downloads": {"name": "مجموع دانلودها"},
+      "stargazers": {"name": "ستاره‌ها"},
+      "followers": {"name": "دنبال‌کنندگان"},
+      "open_issues": {"name": "مسائل باز"},
+      "closed_issues": {"name": "مسائل بسته"}
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Adăugați un depozit GitHub",
+        "description": "Introduceți un token de acces personal și depozitul de urmărit.",
+        "data": {
+          "access_token": "Token de acces",
+          "repository": "Depozit"
+        },
+        "data_description": {
+          "access_token": "Un token de acces personal GitHub. Un token detaliat sau clasic cu acces public de citire crește limita la 5000 de solicitări pe oră.",
+          "repository": "Depozitul de urmărit, în formatul proprietar/nume (de exemplu home-assistant/core)."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Reautentificare GitHub Insights",
+        "description": "Tokenul pentru {repository} nu mai este valid. Introduceți un nou token de acces.",
+        "data": {
+          "access_token": "Token de acces"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Tokenul de acces este invalid sau nu are permisiunile necesare.",
+      "invalid_repository": "Depozitul trebuie să folosească formatul proprietar/nume.",
+      "repo_not_found": "Depozitul nu a putut fi găsit cu acest token.",
+      "rate_limit": "Limita de solicitări a API-ului GitHub este epuizată. Încercați din nou mai târziu.",
+      "cannot_connect": "Conectarea la API-ul GitHub a eșuat."
+    },
+    "abort": {
+      "already_configured": "Acest depozit este deja configurat.",
+      "reauth_successful": "Reautentificarea a reușit."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opțiuni GitHub Insights",
+        "description": "Ajustați cât de des sunt reîmprospătate metricile depozitului.",
+        "data": {
+          "update_interval": "Interval de actualizare (minute)"
+        },
+        "data_description": {
+          "update_interval": "Cât de des să se interogheze API-ul GitHub, în minute. Minimul este 1 minut."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "Commit-uri"},
+      "releases": {"name": "Versiuni"},
+      "latest_release": {"name": "Ultima versiune"},
+      "latest_release_downloads": {"name": "Descărcări ultima versiune"},
+      "total_downloads": {"name": "Total descărcări"},
+      "stargazers": {"name": "Stele"},
+      "followers": {"name": "Urmăritori"},
+      "open_issues": {"name": "Probleme deschise"},
+      "closed_issues": {"name": "Probleme închise"}
+    }
+  }
+}

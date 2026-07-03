@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Bæta við GitHub-gagnasafni",
+        "description": "Sláðu inn persónulegan aðgangslykil og gagnasafnið sem á að fylgjast með.",
+        "data": {
+          "access_token": "Aðgangslykill",
+          "repository": "Gagnasafn"
+        },
+        "data_description": {
+          "access_token": "Persónulegur GitHub-aðgangslykill. Fínkornóttur eða klassískur lykill með opinberum lesaðgangi hækkar beiðnamörkin í 5000 beiðnir á klukkustund.",
+          "repository": "Gagnasafnið sem á að fylgjast með, á sniðinu eigandi/nafn (til dæmis home-assistant/core)."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Auðkenna GitHub Insights aftur",
+        "description": "Lykillinn fyrir {repository} er ekki lengur gildur. Sláðu inn nýjan aðgangslykil.",
+        "data": {
+          "access_token": "Aðgangslykill"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Aðgangslykillinn er ógildur eða vantar nauðsynlegar heimildir.",
+      "invalid_repository": "Gagnasafnið verður að nota sniðið eigandi/nafn.",
+      "repo_not_found": "Gagnasafnið fannst ekki með þessum lykli.",
+      "rate_limit": "Beiðnamörk GitHub API eru uppurin. Reyndu aftur síðar.",
+      "cannot_connect": "Tókst ekki að tengjast GitHub API."
+    },
+    "abort": {
+      "already_configured": "Þetta gagnasafn er þegar uppsett.",
+      "reauth_successful": "Endurauðkenning tókst."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Valkostir fyrir GitHub Insights",
+        "description": "Stilltu hversu oft mælingar gagnasafnsins eru uppfærðar.",
+        "data": {
+          "update_interval": "Uppfærslutíðni (mínútur)"
+        },
+        "data_description": {
+          "update_interval": "Hversu oft á að sækja í GitHub API, í mínútum. Lágmarkið er 1 mínúta."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "Commit-færslur"},
+      "releases": {"name": "Útgáfur"},
+      "latest_release": {"name": "Nýjasta útgáfa"},
+      "latest_release_downloads": {"name": "Niðurhal nýjustu útgáfu"},
+      "total_downloads": {"name": "Heildarniðurhal"},
+      "stargazers": {"name": "Stjörnur"},
+      "followers": {"name": "Fylgjendur"},
+      "open_issues": {"name": "Opin mál"},
+      "closed_issues": {"name": "Lokuð mál"}
+    }
+  }
+}

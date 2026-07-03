@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Een GitHub-repository toevoegen",
+        "description": "Voer een persoonlijk toegangstoken en de te volgen repository in.",
+        "data": {
+          "access_token": "Toegangstoken",
+          "repository": "Repository"
+        },
+        "data_description": {
+          "access_token": "Een persoonlijk GitHub-toegangstoken. Een fijnmazig of klassiek token met openbare leestoegang verhoogt de aanvraaglimiet naar 5000 verzoeken per uur.",
+          "repository": "De te volgen repository, in de notatie eigenaar/naam (bijvoorbeeld home-assistant/core)."
+        }
+      },
+      "reauth_confirm": {
+        "title": "GitHub Insights opnieuw verifiëren",
+        "description": "Het token voor {repository} is niet meer geldig. Voer een nieuw toegangstoken in.",
+        "data": {
+          "access_token": "Toegangstoken"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Het toegangstoken is ongeldig of mist de vereiste rechten.",
+      "invalid_repository": "De repository moet de notatie eigenaar/naam gebruiken.",
+      "repo_not_found": "De repository kon niet worden gevonden met dit token.",
+      "rate_limit": "De aanvraaglimiet van de GitHub-API is bereikt. Probeer het later opnieuw.",
+      "cannot_connect": "Kan geen verbinding maken met de GitHub-API."
+    },
+    "abort": {
+      "already_configured": "Deze repository is al geconfigureerd.",
+      "reauth_successful": "Opnieuw verifiëren is gelukt."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "GitHub Insights-opties",
+        "description": "Pas aan hoe vaak de repositorystatistieken worden ververst.",
+        "data": {
+          "update_interval": "Bijwerkinterval (minuten)"
+        },
+        "data_description": {
+          "update_interval": "Hoe vaak de GitHub-API wordt opgevraagd, in minuten. Het minimum is 1 minuut."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "Commits"},
+      "releases": {"name": "Releases"},
+      "latest_release": {"name": "Nieuwste release"},
+      "latest_release_downloads": {"name": "Downloads nieuwste release"},
+      "total_downloads": {"name": "Totaal aantal downloads"},
+      "stargazers": {"name": "Sterren"},
+      "followers": {"name": "Volgers"},
+      "open_issues": {"name": "Open issues"},
+      "closed_issues": {"name": "Gesloten issues"}
+    }
+  }
+}

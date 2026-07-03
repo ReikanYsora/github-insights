@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "ఒక GitHub రిపోజిటరీని జోడించండి",
+        "description": "వ్యక్తిగత యాక్సెస్ టోకెన్ మరియు ట్రాక్ చేయవలసిన రిపోజిటరీని నమోదు చేయండి.",
+        "data": {
+          "access_token": "యాక్సెస్ టోకెన్",
+          "repository": "రిపోజిటరీ"
+        },
+        "data_description": {
+          "access_token": "ఒక GitHub వ్యక్తిగత యాక్సెస్ టోకెన్. పబ్లిక్ రీడ్ యాక్సెస్ ఉన్న ఫైన్-గ్రెయిన్డ్ లేదా క్లాసిక్ టోకెన్ రేటు పరిమితిని గంటకు 5000 అభ్యర్థనలకు పెంచుతుంది.",
+          "repository": "ట్రాక్ చేయవలసిన రిపోజిటరీ, owner/name ఫార్మాట్‌లో (ఉదాహరణకు home-assistant/core)."
+        }
+      },
+      "reauth_confirm": {
+        "title": "GitHub Insights ను తిరిగి ప్రామాణీకరించండి",
+        "description": "{repository} కోసం టోకెన్ ఇకపై చెల్లదు. కొత్త యాక్సెస్ టోకెన్‌ను నమోదు చేయండి.",
+        "data": {
+          "access_token": "యాక్సెస్ టోకెన్"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "యాక్సెస్ టోకెన్ చెల్లదు లేదా అవసరమైన స్కోప్‌లు లేవు.",
+      "invalid_repository": "రిపోజిటరీ తప్పనిసరిగా owner/name ఫార్మాట్‌ను ఉపయోగించాలి.",
+      "repo_not_found": "ఈ టోకెన్‌తో రిపోజిటరీని కనుగొనలేకపోయాము.",
+      "rate_limit": "GitHub API రేటు పరిమితి అయిపోయింది. తర్వాత మళ్లీ ప్రయత్నించండి.",
+      "cannot_connect": "GitHub API కి కనెక్ట్ చేయడంలో విఫలమైంది."
+    },
+    "abort": {
+      "already_configured": "ఈ రిపోజిటరీ ఇప్పటికే కాన్ఫిగర్ చేయబడింది.",
+      "reauth_successful": "తిరిగి ప్రామాణీకరణ విజయవంతమైంది."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "GitHub Insights ఎంపికలు",
+        "description": "రిపోజిటరీ మెట్రిక్‌లు ఎంత తరచుగా రిఫ్రెష్ అవుతాయో సర్దుబాటు చేయండి.",
+        "data": {
+          "update_interval": "నవీకరణ విరామం (నిమిషాలు)"
+        },
+        "data_description": {
+          "update_interval": "GitHub API ని ఎంత తరచుగా పోల్ చేయాలి, నిమిషాల్లో. కనిష్ఠం 1 నిమిషం."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "కమిట్‌లు"},
+      "releases": {"name": "విడుదలలు"},
+      "latest_release": {"name": "తాజా విడుదల"},
+      "latest_release_downloads": {"name": "తాజా విడుదల డౌన్‌లోడ్‌లు"},
+      "total_downloads": {"name": "మొత్తం డౌన్‌లోడ్‌లు"},
+      "stargazers": {"name": "స్టార్‌లు"},
+      "followers": {"name": "అనుచరులు"},
+      "open_issues": {"name": "తెరిచిన సమస్యలు"},
+      "closed_issues": {"name": "మూసిన సమస్యలు"}
+    }
+  }
+}

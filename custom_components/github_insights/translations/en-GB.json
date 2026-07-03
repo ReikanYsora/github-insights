@@ -49,33 +49,15 @@
   },
   "entity": {
     "sensor": {
-      "commits": {
-        "name": "Commits"
-      },
-      "releases": {
-        "name": "Releases"
-      },
-      "latest_release": {
-        "name": "Latest release"
-      },
-      "latest_release_downloads": {
-        "name": "Latest release downloads"
-      },
-      "total_downloads": {
-        "name": "Total downloads"
-      },
-      "stargazers": {
-        "name": "Stars"
-      },
-      "followers": {
-        "name": "Followers"
-      },
-      "open_issues": {
-        "name": "Open issues"
-      },
-      "closed_issues": {
-        "name": "Closed issues"
-      }
+      "commits": {"name": "Commits"},
+      "releases": {"name": "Releases"},
+      "latest_release": {"name": "Latest release"},
+      "latest_release_downloads": {"name": "Latest release downloads"},
+      "total_downloads": {"name": "Total downloads"},
+      "stargazers": {"name": "Stars"},
+      "followers": {"name": "Followers"},
+      "open_issues": {"name": "Open issues"},
+      "closed_issues": {"name": "Closed issues"}
     }
   }
 }

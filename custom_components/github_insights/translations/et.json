@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Lisa GitHubi hoidla",
+        "description": "Sisesta isiklik juurdepääsuluba ja jälgitav hoidla.",
+        "data": {
+          "access_token": "Juurdepääsuluba",
+          "repository": "Hoidla"
+        },
+        "data_description": {
+          "access_token": "Isiklik GitHubi juurdepääsuluba. Peeneteraline või klassikaline luba avaliku lugemisõigusega tõstab päringute piiri 5000 päringule tunnis.",
+          "repository": "Jälgitav hoidla vormingus omanik/nimi (näiteks home-assistant/core)."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Autendi GitHub Insights uuesti",
+        "description": "Hoidla {repository} luba ei kehti enam. Sisesta uus juurdepääsuluba.",
+        "data": {
+          "access_token": "Juurdepääsuluba"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Juurdepääsuluba on kehtetu või sellel puuduvad vajalikud õigused.",
+      "invalid_repository": "Hoidla peab kasutama vormingut omanik/nimi.",
+      "repo_not_found": "Hoidlat ei õnnestunud selle loaga leida.",
+      "rate_limit": "GitHubi API päringute piir on ammendunud. Proovi hiljem uuesti.",
+      "cannot_connect": "GitHubi API-ga ühenduse loomine ebaõnnestus."
+    },
+    "abort": {
+      "already_configured": "See hoidla on juba seadistatud.",
+      "reauth_successful": "Taasautentimine õnnestus."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "GitHub Insightsi valikud",
+        "description": "Kohanda, kui sageli hoidla mõõdikuid värskendatakse.",
+        "data": {
+          "update_interval": "Värskendusintervall (minutites)"
+        },
+        "data_description": {
+          "update_interval": "Kui sageli GitHubi API-t pärida, minutites. Miinimum on 1 minut."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "Sissekanded"},
+      "releases": {"name": "Väljalasked"},
+      "latest_release": {"name": "Viimane väljalase"},
+      "latest_release_downloads": {"name": "Viimase väljalaske allalaadimised"},
+      "total_downloads": {"name": "Allalaadimisi kokku"},
+      "stargazers": {"name": "Tähed"},
+      "followers": {"name": "Jälgijad"},
+      "open_issues": {"name": "Avatud probleemid"},
+      "closed_issues": {"name": "Suletud probleemid"}
+    }
+  }
+}

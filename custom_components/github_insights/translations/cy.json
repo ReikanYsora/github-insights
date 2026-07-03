@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Ychwanegu ystorfa GitHub",
+        "description": "Rhowch docyn mynediad personol a'r ystorfa i'w holrhain.",
+        "data": {
+          "access_token": "Tocyn mynediad",
+          "repository": "Ystorfa"
+        },
+        "data_description": {
+          "access_token": "Tocyn mynediad personol GitHub. Mae tocyn manwl neu glasurol gyda mynediad darllen cyhoeddus yn codi'r terfyn i 5000 cais yr awr.",
+          "repository": "Yr ystorfa i'w holrhain, yn y fformat perchennog/enw (er enghraifft home-assistant/core)."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Ail-ddilysu GitHub Insights",
+        "description": "Nid yw'r tocyn ar gyfer {repository} yn ddilys mwyach. Rhowch docyn mynediad newydd.",
+        "data": {
+          "access_token": "Tocyn mynediad"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Mae'r tocyn mynediad yn annilys neu heb y caniatâd angenrheidiol.",
+      "invalid_repository": "Rhaid i'r ystorfa ddefnyddio'r fformat perchennog/enw.",
+      "repo_not_found": "Ni ellid dod o hyd i'r ystorfa gyda'r tocyn hwn.",
+      "rate_limit": "Mae terfyn cyfradd API GitHub wedi'i ddisbyddu. Rhowch gynnig arall arni yn nes ymlaen.",
+      "cannot_connect": "Methwyd â chysylltu ag API GitHub."
+    },
+    "abort": {
+      "already_configured": "Mae'r ystorfa hon eisoes wedi'i ffurfweddu.",
+      "reauth_successful": "Roedd yr ail-ddilysu yn llwyddiannus."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opsiynau GitHub Insights",
+        "description": "Addaswch pa mor aml y caiff metrigau'r ystorfa eu hadnewyddu.",
+        "data": {
+          "update_interval": "Cyfnod diweddaru (munudau)"
+        },
+        "data_description": {
+          "update_interval": "Pa mor aml i holi API GitHub, mewn munudau. Yr isafswm yw 1 munud."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "Ymrwymiadau"},
+      "releases": {"name": "Rhyddhadau"},
+      "latest_release": {"name": "Rhyddhad diweddaraf"},
+      "latest_release_downloads": {"name": "Lawrlwythiadau'r rhyddhad diweddaraf"},
+      "total_downloads": {"name": "Cyfanswm y lawrlwythiadau"},
+      "stargazers": {"name": "Sêr"},
+      "followers": {"name": "Dilynwyr"},
+      "open_issues": {"name": "Materion agored"},
+      "closed_issues": {"name": "Materion caeedig"}
+    }
+  }
+}

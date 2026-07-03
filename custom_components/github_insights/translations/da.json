@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Tilføj et GitHub-arkiv",
+        "description": "Indtast et personligt adgangstoken og det arkiv, der skal spores.",
+        "data": {
+          "access_token": "Adgangstoken",
+          "repository": "Arkiv"
+        },
+        "data_description": {
+          "access_token": "Et personligt GitHub-adgangstoken. Et finkornet eller klassisk token med offentlig læseadgang hæver hastighedsgrænsen til 5000 anmodninger i timen.",
+          "repository": "Det arkiv, der skal spores, i formatet ejer/navn (for eksempel home-assistant/core)."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Godkend GitHub Insights igen",
+        "description": "Tokenet for {repository} er ikke længere gyldigt. Indtast et nyt adgangstoken.",
+        "data": {
+          "access_token": "Adgangstoken"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Adgangstokenet er ugyldigt eller mangler de nødvendige tilladelser.",
+      "invalid_repository": "Arkivet skal bruge formatet ejer/navn.",
+      "repo_not_found": "Arkivet kunne ikke findes med dette token.",
+      "rate_limit": "GitHub API-hastighedsgrænsen er opbrugt. Prøv igen senere.",
+      "cannot_connect": "Kunne ikke oprette forbindelse til GitHub API'et."
+    },
+    "abort": {
+      "already_configured": "Dette arkiv er allerede konfigureret.",
+      "reauth_successful": "Fornyet godkendelse lykkedes."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Indstillinger for GitHub Insights",
+        "description": "Juster, hvor ofte arkivets måledata opdateres.",
+        "data": {
+          "update_interval": "Opdateringsinterval (minutter)"
+        },
+        "data_description": {
+          "update_interval": "Hvor ofte GitHub API'et skal forespørges, i minutter. Minimum er 1 minut."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "Commits"},
+      "releases": {"name": "Udgivelser"},
+      "latest_release": {"name": "Seneste udgivelse"},
+      "latest_release_downloads": {"name": "Downloads af seneste udgivelse"},
+      "total_downloads": {"name": "Downloads i alt"},
+      "stargazers": {"name": "Stjerner"},
+      "followers": {"name": "Følgere"},
+      "open_issues": {"name": "Åbne issues"},
+      "closed_issues": {"name": "Lukkede issues"}
+    }
+  }
+}

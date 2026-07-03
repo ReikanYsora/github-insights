@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Добавить репозиторий GitHub",
+        "description": "Введите персональный токен доступа и репозиторий для отслеживания.",
+        "data": {
+          "access_token": "Токен доступа",
+          "repository": "Репозиторий"
+        },
+        "data_description": {
+          "access_token": "Персональный токен доступа GitHub. Детальный или классический токен с доступом на чтение публичных данных увеличивает лимит запросов до 5000 в час.",
+          "repository": "Репозиторий для отслеживания в формате владелец/имя (например, home-assistant/core)."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Повторная аутентификация GitHub Insights",
+        "description": "Токен для {repository} больше недействителен. Введите новый токен доступа.",
+        "data": {
+          "access_token": "Токен доступа"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Токен доступа недействителен или не имеет необходимых разрешений.",
+      "invalid_repository": "Репозиторий должен быть указан в формате владелец/имя.",
+      "repo_not_found": "Не удалось найти репозиторий с этим токеном.",
+      "rate_limit": "Лимит запросов к API GitHub исчерпан. Повторите попытку позже.",
+      "cannot_connect": "Не удалось подключиться к API GitHub."
+    },
+    "abort": {
+      "already_configured": "Этот репозиторий уже настроен.",
+      "reauth_successful": "Повторная аутентификация прошла успешно."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Параметры GitHub Insights",
+        "description": "Настройте частоту обновления метрик репозитория.",
+        "data": {
+          "update_interval": "Интервал обновления (минуты)"
+        },
+        "data_description": {
+          "update_interval": "Как часто опрашивать API GitHub, в минутах. Минимум — 1 минута."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "Коммиты"},
+      "releases": {"name": "Релизы"},
+      "latest_release": {"name": "Последний релиз"},
+      "latest_release_downloads": {"name": "Загрузки последнего релиза"},
+      "total_downloads": {"name": "Всего загрузок"},
+      "stargazers": {"name": "Звёзды"},
+      "followers": {"name": "Подписчики"},
+      "open_issues": {"name": "Открытые задачи"},
+      "closed_issues": {"name": "Закрытые задачи"}
+    }
+  }
+}

@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from datetime import timedelta
 from typing import override
 
 from homeassistant.config_entries import ConfigEntry
@@ -17,7 +18,12 @@ from .api import (
     GitHubInsightsError,
     RepositoryInsights,
 )
-from .const import CONF_REPOSITORY, LOGGER, UPDATE_INTERVAL
+from .const import (
+    CONF_REPOSITORY,
+    CONF_UPDATE_INTERVAL,
+    DEFAULT_UPDATE_INTERVAL,
+    LOGGER,
+)
 
 type GitHubInsightsConfigEntry = ConfigEntry[GitHubInsightsCoordinator]
 
@@ -38,12 +44,15 @@ class GitHubInsightsCoordinator(DataUpdateCoordinator[RepositoryInsights]):
             async_get_clientsession(hass),
             config_entry.data[CONF_ACCESS_TOKEN],
         )
+        minutes = config_entry.options.get(
+            CONF_UPDATE_INTERVAL, DEFAULT_UPDATE_INTERVAL
+        )
         super().__init__(
             hass,
             LOGGER,
             config_entry=config_entry,
             name=self.repository,
-            update_interval=UPDATE_INTERVAL,
+            update_interval=timedelta(minutes=minutes),
         )
 
     @override

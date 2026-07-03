@@ -17,7 +17,7 @@
         "title": "Re-authenticate GitHub Insights",
         "description": "The token for {repository} is no longer valid. Enter a new access token.",
         "data": {
-          "access_token": "[%key:component::github_insights::config::step::user::data::access_token%]"
+          "access_token": "Access token"
         }
       }
     },
@@ -29,8 +29,22 @@
       "cannot_connect": "Failed to connect to the GitHub API."
     },
     "abort": {
-      "already_configured": "[%key:common::config_flow::abort::already_configured_device%]",
-      "reauth_successful": "[%key:common::config_flow::abort::reauth_successful%]"
+      "already_configured": "This repository is already configured.",
+      "reauth_successful": "Re-authentication was successful."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "GitHub Insights options",
+        "description": "Adjust how often the repository metrics are refreshed.",
+        "data": {
+          "update_interval": "Update interval (minutes)"
+        },
+        "data_description": {
+          "update_interval": "How often to poll the GitHub API, in minutes. The minimum is 1 minute."
+        }
+      }
     }
   },
   "entity": {

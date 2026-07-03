@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "添加 GitHub 仓库",
+        "description": "输入个人访问令牌和要跟踪的仓库。",
+        "data": {
+          "access_token": "访问令牌",
+          "repository": "仓库"
+        },
+        "data_description": {
+          "access_token": "GitHub 个人访问令牌。具有公共读取权限的细粒度或经典令牌可将速率限制提升到每小时 5000 次请求。",
+          "repository": "要跟踪的仓库，采用 owner/name 格式（例如 home-assistant/core）。"
+        }
+      },
+      "reauth_confirm": {
+        "title": "重新验证 GitHub Insights",
+        "description": "{repository} 的令牌已失效。请输入新的访问令牌。",
+        "data": {
+          "access_token": "访问令牌"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "访问令牌无效或缺少所需的权限范围。",
+      "invalid_repository": "仓库必须使用 owner/name 格式。",
+      "repo_not_found": "使用此令牌找不到该仓库。",
+      "rate_limit": "GitHub API 速率限制已用尽。请稍后重试。",
+      "cannot_connect": "无法连接到 GitHub API。"
+    },
+    "abort": {
+      "already_configured": "此仓库已配置。",
+      "reauth_successful": "重新验证成功。"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "GitHub Insights 选项",
+        "description": "调整仓库指标的刷新频率。",
+        "data": {
+          "update_interval": "更新间隔（分钟）"
+        },
+        "data_description": {
+          "update_interval": "轮询 GitHub API 的频率（以分钟为单位）。最小值为 1 分钟。"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "提交"},
+      "releases": {"name": "发行版"},
+      "latest_release": {"name": "最新发行版"},
+      "latest_release_downloads": {"name": "最新发行版下载量"},
+      "total_downloads": {"name": "总下载量"},
+      "stargazers": {"name": "星标"},
+      "followers": {"name": "关注者"},
+      "open_issues": {"name": "开放的问题"},
+      "closed_issues": {"name": "已关闭的问题"}
+    }
+  }
+}

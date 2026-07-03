@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Tambahkan repositori GitHub",
+        "description": "Masukkan token akses pribadi dan repositori yang akan dilacak.",
+        "data": {
+          "access_token": "Token akses",
+          "repository": "Repositori"
+        },
+        "data_description": {
+          "access_token": "Token akses pribadi GitHub. Token fine-grained atau klasik dengan akses baca publik menaikkan batas laju menjadi 5000 permintaan per jam.",
+          "repository": "Repositori yang akan dilacak, dalam format owner/name (misalnya home-assistant/core)."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Autentikasi ulang GitHub Insights",
+        "description": "Token untuk {repository} sudah tidak valid. Masukkan token akses baru.",
+        "data": {
+          "access_token": "Token akses"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Token akses tidak valid atau tidak memiliki cakupan yang diperlukan.",
+      "invalid_repository": "Repositori harus menggunakan format owner/name.",
+      "repo_not_found": "Repositori tidak dapat ditemukan dengan token ini.",
+      "rate_limit": "Batas laju GitHub API telah habis. Coba lagi nanti.",
+      "cannot_connect": "Gagal terhubung ke GitHub API."
+    },
+    "abort": {
+      "already_configured": "Repositori ini sudah dikonfigurasi.",
+      "reauth_successful": "Autentikasi ulang berhasil."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opsi GitHub Insights",
+        "description": "Sesuaikan seberapa sering metrik repositori disegarkan.",
+        "data": {
+          "update_interval": "Interval pembaruan (menit)"
+        },
+        "data_description": {
+          "update_interval": "Seberapa sering melakukan polling ke GitHub API, dalam menit. Minimum 1 menit."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "Komit"},
+      "releases": {"name": "Rilis"},
+      "latest_release": {"name": "Rilis terbaru"},
+      "latest_release_downloads": {"name": "Unduhan rilis terbaru"},
+      "total_downloads": {"name": "Total unduhan"},
+      "stargazers": {"name": "Bintang"},
+      "followers": {"name": "Pengikut"},
+      "open_issues": {"name": "Isu terbuka"},
+      "closed_issues": {"name": "Isu tertutup"}
+    }
+  }
+}

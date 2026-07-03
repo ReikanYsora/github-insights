@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from datetime import timedelta
 from http import HTTPStatus
 
 from homeassistant.config_entries import ConfigEntryState
@@ -29,6 +30,7 @@ async def test_setup_and_sensors(
     await _setup(hass, mock_config_entry)
 
     assert mock_config_entry.state is ConfigEntryState.LOADED
+    assert mock_config_entry.runtime_data.update_interval == timedelta(minutes=5)
 
     assert hass.states.get("sensor.home_assistant_core_commits").state == "90000"
     assert hass.states.get("sensor.home_assistant_core_releases").state == "2"

@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Pievienot GitHub repozitoriju",
+        "description": "Ievadiet personīgo piekļuves pilnvaru un sekojamo repozitoriju.",
+        "data": {
+          "access_token": "Piekļuves pilnvara",
+          "repository": "Repozitorijs"
+        },
+        "data_description": {
+          "access_token": "Personīga GitHub piekļuves pilnvara. Detalizēta vai klasiska pilnvara ar publisku lasīšanas piekļuvi paaugstina pieprasījumu ierobežojumu līdz 5000 pieprasījumiem stundā.",
+          "repository": "Sekojamais repozitorijs formātā īpašnieks/nosaukums (piemēram, home-assistant/core)."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Atkārtoti autentificēt GitHub Insights",
+        "description": "Repozitorija {repository} pilnvara vairs nav derīga. Ievadiet jaunu piekļuves pilnvaru.",
+        "data": {
+          "access_token": "Piekļuves pilnvara"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Piekļuves pilnvara ir nederīga vai tai trūkst nepieciešamo tiesību.",
+      "invalid_repository": "Repozitorijam jāizmanto formāts īpašnieks/nosaukums.",
+      "repo_not_found": "Repozitoriju ar šo pilnvaru neizdevās atrast.",
+      "rate_limit": "GitHub API pieprasījumu ierobežojums ir izsmelts. Mēģiniet vēlāk.",
+      "cannot_connect": "Neizdevās izveidot savienojumu ar GitHub API."
+    },
+    "abort": {
+      "already_configured": "Šis repozitorijs jau ir konfigurēts.",
+      "reauth_successful": "Atkārtota autentifikācija bija veiksmīga."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "GitHub Insights opcijas",
+        "description": "Pielāgojiet, cik bieži tiek atsvaidzināti repozitorija rādītāji.",
+        "data": {
+          "update_interval": "Atjaunināšanas intervāls (minūtēs)"
+        },
+        "data_description": {
+          "update_interval": "Cik bieži veikt GitHub API pieprasījumus, minūtēs. Minimums ir 1 minūte."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "Iesūtījumi"},
+      "releases": {"name": "Laidieni"},
+      "latest_release": {"name": "Jaunākais laidiens"},
+      "latest_release_downloads": {"name": "Jaunākā laidiena lejupielādes"},
+      "total_downloads": {"name": "Kopējās lejupielādes"},
+      "stargazers": {"name": "Zvaigznes"},
+      "followers": {"name": "Sekotāji"},
+      "open_issues": {"name": "Atvērtās problēmas"},
+      "closed_issues": {"name": "Slēgtās problēmas"}
+    }
+  }
+}

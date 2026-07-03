@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "เพิ่มที่เก็บข้อมูล GitHub",
+        "description": "ป้อนโทเค็นการเข้าถึงส่วนบุคคลและที่เก็บข้อมูลที่ต้องการติดตาม",
+        "data": {
+          "access_token": "โทเค็นการเข้าถึง",
+          "repository": "ที่เก็บข้อมูล"
+        },
+        "data_description": {
+          "access_token": "โทเค็นการเข้าถึงส่วนบุคคลของ GitHub โทเค็นแบบละเอียดหรือแบบคลาสสิกที่มีสิทธิ์อ่านข้อมูลสาธารณะจะเพิ่มขีดจำกัดอัตราเป็น 5000 คำขอต่อชั่วโมง",
+          "repository": "ที่เก็บข้อมูลที่ต้องการติดตาม ในรูปแบบ owner/name (ตัวอย่างเช่น home-assistant/core)"
+        }
+      },
+      "reauth_confirm": {
+        "title": "ยืนยันตัวตนใหม่สำหรับ GitHub Insights",
+        "description": "โทเค็นสำหรับ {repository} ใช้ไม่ได้อีกต่อไป ป้อนโทเค็นการเข้าถึงใหม่",
+        "data": {
+          "access_token": "โทเค็นการเข้าถึง"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "โทเค็นการเข้าถึงไม่ถูกต้องหรือไม่มีขอบเขตที่จำเป็น",
+      "invalid_repository": "ที่เก็บข้อมูลต้องใช้รูปแบบ owner/name",
+      "repo_not_found": "ไม่พบที่เก็บข้อมูลด้วยโทเค็นนี้",
+      "rate_limit": "ขีดจำกัดอัตราของ GitHub API หมดแล้ว ลองอีกครั้งในภายหลัง",
+      "cannot_connect": "เชื่อมต่อกับ GitHub API ไม่สำเร็จ"
+    },
+    "abort": {
+      "already_configured": "ที่เก็บข้อมูลนี้ได้รับการกำหนดค่าไว้แล้ว",
+      "reauth_successful": "ยืนยันตัวตนใหม่สำเร็จ"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "ตัวเลือก GitHub Insights",
+        "description": "ปรับความถี่ในการรีเฟรชเมตริกของที่เก็บข้อมูล",
+        "data": {
+          "update_interval": "ช่วงเวลาการอัปเดต (นาที)"
+        },
+        "data_description": {
+          "update_interval": "ความถี่ในการเรียกดู GitHub API เป็นนาที ค่าต่ำสุดคือ 1 นาที"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "คอมมิต"},
+      "releases": {"name": "รุ่นที่เผยแพร่"},
+      "latest_release": {"name": "รุ่นล่าสุด"},
+      "latest_release_downloads": {"name": "ยอดดาวน์โหลดรุ่นล่าสุด"},
+      "total_downloads": {"name": "ยอดดาวน์โหลดทั้งหมด"},
+      "stargazers": {"name": "ดาว"},
+      "followers": {"name": "ผู้ติดตาม"},
+      "open_issues": {"name": "ปัญหาที่เปิดอยู่"},
+      "closed_issues": {"name": "ปัญหาที่ปิดแล้ว"}
+    }
+  }
+}

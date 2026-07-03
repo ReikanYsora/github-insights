@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Voeg 'n GitHub-bewaarplek by",
+        "description": "Voer 'n persoonlike toegangstoken en die bewaarplek om te volg in.",
+        "data": {
+          "access_token": "Toegangstoken",
+          "repository": "Bewaarplek"
+        },
+        "data_description": {
+          "access_token": "'n Persoonlike GitHub-toegangstoken. 'n Fynkorrelige of klassieke token met openbare leestoegang verhoog die perk na 5000 versoeke per uur.",
+          "repository": "Die bewaarplek om te volg, in die eienaar/naam-formaat (byvoorbeeld home-assistant/core)."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Herverifieer GitHub Insights",
+        "description": "Die token vir {repository} is nie meer geldig nie. Voer 'n nuwe toegangstoken in.",
+        "data": {
+          "access_token": "Toegangstoken"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Die toegangstoken is ongeldig of het nie die vereiste regte nie.",
+      "invalid_repository": "Die bewaarplek moet die eienaar/naam-formaat gebruik.",
+      "repo_not_found": "Die bewaarplek kon nie met hierdie token gevind word nie.",
+      "rate_limit": "Die GitHub API se versoekperk is uitgeput. Probeer later weer.",
+      "cannot_connect": "Kon nie met die GitHub API verbind nie."
+    },
+    "abort": {
+      "already_configured": "Hierdie bewaarplek is reeds opgestel.",
+      "reauth_successful": "Herverifikasie was suksesvol."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "GitHub Insights-opsies",
+        "description": "Stel in hoe gereeld die bewaarplek se metrieke verfris word.",
+        "data": {
+          "update_interval": "Opdateringsinterval (minute)"
+        },
+        "data_description": {
+          "update_interval": "Hoe gereeld om die GitHub API te ondervra, in minute. Die minimum is 1 minuut."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "Commits"},
+      "releases": {"name": "Vrystellings"},
+      "latest_release": {"name": "Nuutste vrystelling"},
+      "latest_release_downloads": {"name": "Nuutste vrystelling se aflaaie"},
+      "total_downloads": {"name": "Totale aflaaie"},
+      "stargazers": {"name": "Sterre"},
+      "followers": {"name": "Volgers"},
+      "open_issues": {"name": "Oop kwessies"},
+      "closed_issues": {"name": "Geslote kwessies"}
+    }
+  }
+}

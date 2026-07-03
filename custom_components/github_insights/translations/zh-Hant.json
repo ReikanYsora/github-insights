@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "新增 GitHub 儲存庫",
+        "description": "輸入個人存取權杖和要追蹤的儲存庫。",
+        "data": {
+          "access_token": "存取權杖",
+          "repository": "儲存庫"
+        },
+        "data_description": {
+          "access_token": "GitHub 個人存取權杖。具有公開讀取權限的細粒度或傳統權杖可將速率限制提升至每小時 5000 次請求。",
+          "repository": "要追蹤的儲存庫，採用 owner/name 格式（例如 home-assistant/core）。"
+        }
+      },
+      "reauth_confirm": {
+        "title": "重新驗證 GitHub Insights",
+        "description": "{repository} 的權杖已失效。請輸入新的存取權杖。",
+        "data": {
+          "access_token": "存取權杖"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "存取權杖無效或缺少所需的權限範圍。",
+      "invalid_repository": "儲存庫必須使用 owner/name 格式。",
+      "repo_not_found": "使用此權杖找不到該儲存庫。",
+      "rate_limit": "GitHub API 速率限制已用盡。請稍後再試。",
+      "cannot_connect": "無法連線至 GitHub API。"
+    },
+    "abort": {
+      "already_configured": "此儲存庫已設定。",
+      "reauth_successful": "重新驗證成功。"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "GitHub Insights 選項",
+        "description": "調整儲存庫指標的重新整理頻率。",
+        "data": {
+          "update_interval": "更新間隔（分鐘）"
+        },
+        "data_description": {
+          "update_interval": "輪詢 GitHub API 的頻率（以分鐘為單位）。最小值為 1 分鐘。"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "提交"},
+      "releases": {"name": "發行版"},
+      "latest_release": {"name": "最新發行版"},
+      "latest_release_downloads": {"name": "最新發行版下載次數"},
+      "total_downloads": {"name": "總下載次數"},
+      "stargazers": {"name": "星標"},
+      "followers": {"name": "追蹤者"},
+      "open_issues": {"name": "開啟的問題"},
+      "closed_issues": {"name": "已關閉的問題"}
+    }
+  }
+}

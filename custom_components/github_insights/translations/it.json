@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Aggiungi un repository GitHub",
+        "description": "Inserisci un token di accesso personale e il repository da monitorare.",
+        "data": {
+          "access_token": "Token di accesso",
+          "repository": "Repository"
+        },
+        "data_description": {
+          "access_token": "Un token di accesso personale GitHub. Un token granulare o classico con accesso in lettura pubblico aumenta il limite di richieste a 5000 all'ora.",
+          "repository": "Il repository da monitorare, nel formato proprietario/nome (ad esempio home-assistant/core)."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Autentica nuovamente GitHub Insights",
+        "description": "Il token per {repository} non è più valido. Inserisci un nuovo token di accesso.",
+        "data": {
+          "access_token": "Token di accesso"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Il token di accesso non è valido o non dispone degli ambiti richiesti.",
+      "invalid_repository": "Il repository deve usare il formato proprietario/nome.",
+      "repo_not_found": "Impossibile trovare il repository con questo token.",
+      "rate_limit": "Il limite di richieste dell'API GitHub è esaurito. Riprova più tardi.",
+      "cannot_connect": "Impossibile connettersi all'API GitHub."
+    },
+    "abort": {
+      "already_configured": "Questo repository è già configurato.",
+      "reauth_successful": "La nuova autenticazione è avvenuta con successo."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opzioni di GitHub Insights",
+        "description": "Regola la frequenza di aggiornamento delle metriche del repository.",
+        "data": {
+          "update_interval": "Intervallo di aggiornamento (minuti)"
+        },
+        "data_description": {
+          "update_interval": "Con quale frequenza interrogare l'API GitHub, in minuti. Il minimo è 1 minuto."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "Commit"},
+      "releases": {"name": "Release"},
+      "latest_release": {"name": "Ultima release"},
+      "latest_release_downloads": {"name": "Download dell'ultima release"},
+      "total_downloads": {"name": "Download totali"},
+      "stargazers": {"name": "Stelle"},
+      "followers": {"name": "Follower"},
+      "open_issues": {"name": "Issue aperte"},
+      "closed_issues": {"name": "Issue chiuse"}
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "E GitHub-Repository dobäisetzen",
+        "description": "Gitt e perséinlechen Zougrëffstoken an de Repository, deen ee verfolge wëll, un.",
+        "data": {
+          "access_token": "Zougrëffstoken",
+          "repository": "Repository"
+        },
+        "data_description": {
+          "access_token": "E perséinleche GitHub-Zougrëffstoken. E feinkäregen oder klasseschen Token mat ëffentlechem Liesezougrëff erhéicht d'Limit op 5000 Ufroen d'Stonn.",
+          "repository": "De Repository, deen ee verfolge wëll, am Format Besëtzer/Numm (zum Beispill home-assistant/core)."
+        }
+      },
+      "reauth_confirm": {
+        "title": "GitHub Insights nei authentifizéieren",
+        "description": "Den Token fir {repository} ass net méi gëlteg. Gitt en neien Zougrëffstoken un.",
+        "data": {
+          "access_token": "Zougrëffstoken"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Den Zougrëffstoken ass ongëlteg oder huet net déi néideg Rechter.",
+      "invalid_repository": "De Repository muss d'Format Besëtzer/Numm benotzen.",
+      "repo_not_found": "De Repository konnt mat dësem Token net fonnt ginn.",
+      "rate_limit": "D'Ufroe-Limit vun der GitHub API ass ausgeschöpft. Probéiert et méi spéit nach eng Kéier.",
+      "cannot_connect": "Verbindung mat der GitHub API feelgeschloen."
+    },
+    "abort": {
+      "already_configured": "De Repository ass scho konfiguréiert.",
+      "reauth_successful": "D'Nei-Authentifikatioun war erfollegräich."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "GitHub Insights-Optiounen",
+        "description": "Passt un, wéi dacks d'Metrike vum Repository aktualiséiert ginn.",
+        "data": {
+          "update_interval": "Aktualiséierungsintervall (Minutten)"
+        },
+        "data_description": {
+          "update_interval": "Wéi dacks d'GitHub API ofgefrot gëtt, a Minutten. De Minimum ass 1 Minutt."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "Commiten"},
+      "releases": {"name": "Verëffentlechungen"},
+      "latest_release": {"name": "Lescht Verëffentlechung"},
+      "latest_release_downloads": {"name": "Downloads vun der leschter Verëffentlechung"},
+      "total_downloads": {"name": "Downloads am Ganzen"},
+      "stargazers": {"name": "Stären"},
+      "followers": {"name": "Follower"},
+      "open_issues": {"name": "Oppe Problemer"},
+      "closed_issues": {"name": "Zougemaach Problemer"}
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Legg til eit GitHub-repositorium",
+        "description": "Skriv inn eit personleg tilgangstoken og repositoriet som skal sporast.",
+        "data": {
+          "access_token": "Tilgangstoken",
+          "repository": "Repositorium"
+        },
+        "data_description": {
+          "access_token": "Eit personleg GitHub-tilgangstoken. Eit finkorna eller klassisk token med offentleg lesetilgang hevar hastigheitsgrensa til 5000 førespurnader per time.",
+          "repository": "Repositoriet som skal sporast, i formatet eigar/namn (til dømes home-assistant/core)."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Autentiser GitHub Insights på nytt",
+        "description": "Tokenet for {repository} er ikkje lenger gyldig. Skriv inn eit nytt tilgangstoken.",
+        "data": {
+          "access_token": "Tilgangstoken"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Tilgangstokenet er ugyldig eller manglar dei nødvendige løyva.",
+      "invalid_repository": "Repositoriet må bruke formatet eigar/namn.",
+      "repo_not_found": "Repositoriet vart ikkje funne med dette tokenet.",
+      "rate_limit": "GitHub API-hastigheitsgrensa er brukt opp. Prøv igjen seinare.",
+      "cannot_connect": "Klarte ikkje å kople til GitHub API-et."
+    },
+    "abort": {
+      "already_configured": "Dette repositoriet er allereie konfigurert.",
+      "reauth_successful": "Ny autentisering var vellukka."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Alternativ for GitHub Insights",
+        "description": "Juster kor ofte måledataa til repositoriet blir oppdaterte.",
+        "data": {
+          "update_interval": "Oppdateringsintervall (minutt)"
+        },
+        "data_description": {
+          "update_interval": "Kor ofte GitHub API-et skal spørjast, i minutt. Minimum er 1 minutt."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "Commits"},
+      "releases": {"name": "Utgjevingar"},
+      "latest_release": {"name": "Nyaste utgjeving"},
+      "latest_release_downloads": {"name": "Nedlastingar av nyaste utgjeving"},
+      "total_downloads": {"name": "Totalt tal på nedlastingar"},
+      "stargazers": {"name": "Stjerner"},
+      "followers": {"name": "Følgjarar"},
+      "open_issues": {"name": "Opne saker"},
+      "closed_issues": {"name": "Lukka saker"}
+    }
+  }
+}

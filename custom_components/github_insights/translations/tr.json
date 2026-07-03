@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "GitHub deposu ekle",
+        "description": "Bir kişisel erişim belirteci ve izlenecek depoyu girin.",
+        "data": {
+          "access_token": "Erişim belirteci",
+          "repository": "Depo"
+        },
+        "data_description": {
+          "access_token": "Bir GitHub kişisel erişim belirteci. Genel okuma erişimine sahip ayrıntılı veya klasik bir belirteç, hız sınırını saatte 5000 isteğe yükseltir.",
+          "repository": "İzlenecek depo, sahip/ad biçiminde (örneğin home-assistant/core)."
+        }
+      },
+      "reauth_confirm": {
+        "title": "GitHub Insights'ta yeniden kimlik doğrulama",
+        "description": "{repository} için belirteç artık geçerli değil. Yeni bir erişim belirteci girin.",
+        "data": {
+          "access_token": "Erişim belirteci"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Erişim belirteci geçersiz veya gerekli kapsamlara sahip değil.",
+      "invalid_repository": "Depo, sahip/ad biçimini kullanmalıdır.",
+      "repo_not_found": "Depo bu belirteçle bulunamadı.",
+      "rate_limit": "GitHub API hız sınırı tükendi. Daha sonra tekrar deneyin.",
+      "cannot_connect": "GitHub API'ye bağlanılamadı."
+    },
+    "abort": {
+      "already_configured": "Bu depo zaten yapılandırılmış.",
+      "reauth_successful": "Yeniden kimlik doğrulama başarılı oldu."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "GitHub Insights seçenekleri",
+        "description": "Depo ölçümlerinin ne sıklıkla yenileneceğini ayarlayın.",
+        "data": {
+          "update_interval": "Güncelleme aralığı (dakika)"
+        },
+        "data_description": {
+          "update_interval": "GitHub API'nin ne sıklıkla sorgulanacağı, dakika cinsinden. En düşük değer 1 dakikadır."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "İşlemeler"},
+      "releases": {"name": "Sürümler"},
+      "latest_release": {"name": "En son sürüm"},
+      "latest_release_downloads": {"name": "En son sürüm indirmeleri"},
+      "total_downloads": {"name": "Toplam indirmeler"},
+      "stargazers": {"name": "Yıldızlar"},
+      "followers": {"name": "Takipçiler"},
+      "open_issues": {"name": "Açık sorunlar"},
+      "closed_issues": {"name": "Kapalı sorunlar"}
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Dodaj GitHub repozitorijum",
+        "description": "Unesite lični pristupni token i repozitorijum za praćenje.",
+        "data": {
+          "access_token": "Pristupni token",
+          "repository": "Repozitorijum"
+        },
+        "data_description": {
+          "access_token": "Lični pristupni token za GitHub. Detaljni ili klasični token sa pristupom za čitanje javnih podataka povećava ograničenje na 5000 zahteva na sat.",
+          "repository": "Repozitorijum za praćenje u formatu vlasnik/ime (na primer home-assistant/core)."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Ponovna autentifikacija GitHub Insights",
+        "description": "Token za {repository} više nije važeći. Unesite novi pristupni token.",
+        "data": {
+          "access_token": "Pristupni token"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Pristupni token je nevažeći ili nema potrebne dozvole.",
+      "invalid_repository": "Repozitorijum mora biti u formatu vlasnik/ime.",
+      "repo_not_found": "Repozitorijum nije moguće pronaći sa ovim tokenom.",
+      "rate_limit": "Ograničenje zahteva za GitHub API je iscrpljeno. Pokušajte ponovo kasnije.",
+      "cannot_connect": "Povezivanje sa GitHub API-jem nije uspelo."
+    },
+    "abort": {
+      "already_configured": "Ovaj repozitorijum je već konfigurisan.",
+      "reauth_successful": "Ponovna autentifikacija je uspela."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opcije za GitHub Insights",
+        "description": "Podesite koliko često se osvežavaju metrike repozitorijuma.",
+        "data": {
+          "update_interval": "Interval ažuriranja (minuti)"
+        },
+        "data_description": {
+          "update_interval": "Koliko često se poziva GitHub API, u minutima. Minimum je 1 minut."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "Komiti"},
+      "releases": {"name": "Izdanja"},
+      "latest_release": {"name": "Najnovije izdanje"},
+      "latest_release_downloads": {"name": "Preuzimanja najnovijeg izdanja"},
+      "total_downloads": {"name": "Ukupno preuzimanja"},
+      "stargazers": {"name": "Zvezdice"},
+      "followers": {"name": "Pratioci"},
+      "open_issues": {"name": "Otvoreni problemi"},
+      "closed_issues": {"name": "Zatvoreni problemi"}
+    }
+  }
+}

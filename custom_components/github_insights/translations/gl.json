@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Engadir un repositorio de GitHub",
+        "description": "Introduza un token de acceso persoal e o repositorio que quere seguir.",
+        "data": {
+          "access_token": "Token de acceso",
+          "repository": "Repositorio"
+        },
+        "data_description": {
+          "access_token": "Un token de acceso persoal de GitHub. Un token detallado ou clásico con acceso de lectura pública aumenta o límite a 5000 solicitudes por hora.",
+          "repository": "O repositorio que quere seguir, no formato propietario/nome (por exemplo home-assistant/core)."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Reautenticar GitHub Insights",
+        "description": "O token para {repository} xa non é válido. Introduza un novo token de acceso.",
+        "data": {
+          "access_token": "Token de acceso"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "O token de acceso non é válido ou carece dos permisos necesarios.",
+      "invalid_repository": "O repositorio debe usar o formato propietario/nome.",
+      "repo_not_found": "Non se puido atopar o repositorio con este token.",
+      "rate_limit": "O límite de solicitudes da API de GitHub esgotouse. Ténteo de novo máis tarde.",
+      "cannot_connect": "Non se puido conectar coa API de GitHub."
+    },
+    "abort": {
+      "already_configured": "Este repositorio xa está configurado.",
+      "reauth_successful": "A reautenticación realizouse correctamente."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opcións de GitHub Insights",
+        "description": "Axuste a frecuencia coa que se actualizan as métricas do repositorio.",
+        "data": {
+          "update_interval": "Intervalo de actualización (minutos)"
+        },
+        "data_description": {
+          "update_interval": "Con que frecuencia consultar a API de GitHub, en minutos. O mínimo é 1 minuto."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "Commits"},
+      "releases": {"name": "Versións"},
+      "latest_release": {"name": "Última versión"},
+      "latest_release_downloads": {"name": "Descargas da última versión"},
+      "total_downloads": {"name": "Descargas totais"},
+      "stargazers": {"name": "Estrelas"},
+      "followers": {"name": "Seguidores"},
+      "open_issues": {"name": "Incidencias abertas"},
+      "closed_issues": {"name": "Incidencias pechadas"}
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "একটি GitHub রিপোজিটরি যোগ করুন",
+        "description": "একটি ব্যক্তিগত অ্যাক্সেস টোকেন এবং ট্র্যাক করার জন্য রিপোজিটরি লিখুন।",
+        "data": {
+          "access_token": "অ্যাক্সেস টোকেন",
+          "repository": "রিপোজিটরি"
+        },
+        "data_description": {
+          "access_token": "একটি GitHub ব্যক্তিগত অ্যাক্সেস টোকেন। পাবলিক রিড অ্যাক্সেস সহ একটি ফাইন-গ্রেইনড বা ক্লাসিক টোকেন রেট সীমা প্রতি ঘণ্টায় 5000 অনুরোধে বাড়িয়ে দেয়।",
+          "repository": "ট্র্যাক করার জন্য রিপোজিটরি, owner/name ফর্ম্যাটে (উদাহরণস্বরূপ home-assistant/core)।"
+        }
+      },
+      "reauth_confirm": {
+        "title": "GitHub Insights পুনরায় প্রমাণীকরণ করুন",
+        "description": "{repository}-এর টোকেন আর বৈধ নয়। একটি নতুন অ্যাক্সেস টোকেন লিখুন।",
+        "data": {
+          "access_token": "অ্যাক্সেস টোকেন"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "অ্যাক্সেস টোকেনটি অবৈধ অথবা প্রয়োজনীয় স্কোপ নেই।",
+      "invalid_repository": "রিপোজিটরিকে অবশ্যই owner/name ফর্ম্যাট ব্যবহার করতে হবে।",
+      "repo_not_found": "এই টোকেন দিয়ে রিপোজিটরিটি খুঁজে পাওয়া যায়নি।",
+      "rate_limit": "GitHub API রেট সীমা শেষ হয়ে গেছে। পরে আবার চেষ্টা করুন।",
+      "cannot_connect": "GitHub API-তে সংযোগ করতে ব্যর্থ হয়েছে।"
+    },
+    "abort": {
+      "already_configured": "এই রিপোজিটরিটি ইতিমধ্যে কনফিগার করা হয়েছে।",
+      "reauth_successful": "পুনরায় প্রমাণীকরণ সফল হয়েছে।"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "GitHub Insights বিকল্প",
+        "description": "রিপোজিটরি মেট্রিক্স কত ঘন ঘন রিফ্রেশ হবে তা সামঞ্জস্য করুন।",
+        "data": {
+          "update_interval": "আপডেট ব্যবধান (মিনিট)"
+        },
+        "data_description": {
+          "update_interval": "GitHub API কত ঘন ঘন পোল করা হবে, মিনিটে। সর্বনিম্ন 1 মিনিট।"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "কমিট"},
+      "releases": {"name": "রিলিজ"},
+      "latest_release": {"name": "সর্বশেষ রিলিজ"},
+      "latest_release_downloads": {"name": "সর্বশেষ রিলিজ ডাউনলোড"},
+      "total_downloads": {"name": "মোট ডাউনলোড"},
+      "stargazers": {"name": "স্টার"},
+      "followers": {"name": "ফলোয়ার"},
+      "open_issues": {"name": "খোলা ইস্যু"},
+      "closed_issues": {"name": "বন্ধ ইস্যু"}
+    }
+  }
+}

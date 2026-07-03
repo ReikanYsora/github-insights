@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Додади складиште на GitHub",
+        "description": "Внесете личен токен за пристап и складиштето за следење.",
+        "data": {
+          "access_token": "Токен за пристап",
+          "repository": "Складиште"
+        },
+        "data_description": {
+          "access_token": "Личен токен за пристап на GitHub. Детален или класичен токен со пристап за читање на јавни податоци го зголемува ограничувањето на 5000 барања на час.",
+          "repository": "Складиштето за следење во форматот сопственик/име (на пример home-assistant/core)."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Повторна автентикација на GitHub Insights",
+        "description": "Токенот за {repository} веќе не е важечки. Внесете нов токен за пристап.",
+        "data": {
+          "access_token": "Токен за пристап"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Токенот за пристап е неважечки или ги нема потребните дозволи.",
+      "invalid_repository": "Складиштето мора да биде во форматот сопственик/име.",
+      "repo_not_found": "Складиштето не може да се најде со овој токен.",
+      "rate_limit": "Ограничувањето на барања до API на GitHub е исцрпено. Обидете се повторно подоцна.",
+      "cannot_connect": "Не успеа поврзувањето со API на GitHub."
+    },
+    "abort": {
+      "already_configured": "Ова складиште е веќе конфигурирано.",
+      "reauth_successful": "Повторната автентикација беше успешна."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Опции за GitHub Insights",
+        "description": "Прилагодете колку често се освежуваат метриките на складиштето.",
+        "data": {
+          "update_interval": "Интервал на ажурирање (минути)"
+        },
+        "data_description": {
+          "update_interval": "Колку често да се повикува API на GitHub, во минути. Минимумот е 1 минута."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "Комити"},
+      "releases": {"name": "Изданија"},
+      "latest_release": {"name": "Последно издание"},
+      "latest_release_downloads": {"name": "Преземања на последното издание"},
+      "total_downloads": {"name": "Вкупно преземања"},
+      "stargazers": {"name": "Ѕвезди"},
+      "followers": {"name": "Следбеници"},
+      "open_issues": {"name": "Отворени проблеми"},
+      "closed_issues": {"name": "Затворени проблеми"}
+    }
+  }
+}

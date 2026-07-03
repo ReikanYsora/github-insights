@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Додати репозиторій GitHub",
+        "description": "Введіть персональний токен доступу та репозиторій для відстеження.",
+        "data": {
+          "access_token": "Токен доступу",
+          "repository": "Репозиторій"
+        },
+        "data_description": {
+          "access_token": "Персональний токен доступу GitHub. Детальний або класичний токен із доступом на читання публічних даних підвищує ліміт запитів до 5000 на годину.",
+          "repository": "Репозиторій для відстеження у форматі власник/назва (наприклад, home-assistant/core)."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Повторна автентифікація GitHub Insights",
+        "description": "Токен для {repository} більше недійсний. Введіть новий токен доступу.",
+        "data": {
+          "access_token": "Токен доступу"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Токен доступу недійсний або не має потрібних дозволів.",
+      "invalid_repository": "Репозиторій має бути вказаний у форматі власник/назва.",
+      "repo_not_found": "Не вдалося знайти репозиторій із цим токеном.",
+      "rate_limit": "Ліміт запитів до API GitHub вичерпано. Спробуйте пізніше.",
+      "cannot_connect": "Не вдалося підключитися до API GitHub."
+    },
+    "abort": {
+      "already_configured": "Цей репозиторій уже налаштовано.",
+      "reauth_successful": "Повторна автентифікація пройшла успішно."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Параметри GitHub Insights",
+        "description": "Налаштуйте частоту оновлення метрик репозиторію.",
+        "data": {
+          "update_interval": "Інтервал оновлення (хвилини)"
+        },
+        "data_description": {
+          "update_interval": "Як часто опитувати API GitHub, у хвилинах. Мінімум — 1 хвилина."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "Коміти"},
+      "releases": {"name": "Релізи"},
+      "latest_release": {"name": "Останній реліз"},
+      "latest_release_downloads": {"name": "Завантаження останнього релізу"},
+      "total_downloads": {"name": "Усього завантажень"},
+      "stargazers": {"name": "Зірки"},
+      "followers": {"name": "Підписники"},
+      "open_issues": {"name": "Відкриті завдання"},
+      "closed_issues": {"name": "Закриті завдання"}
+    }
+  }
+}

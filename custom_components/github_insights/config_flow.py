@@ -5,10 +5,19 @@ from __future__ import annotations
 from collections.abc import Mapping
 from typing import Any, override
 
-from homeassistant.config_entries import ConfigFlow, ConfigFlowResult
+from homeassistant.config_entries import (
+    ConfigEntry,
+    ConfigFlow,
+    ConfigFlowResult,
+    OptionsFlow,
+)
 from homeassistant.const import CONF_ACCESS_TOKEN
+from homeassistant.core import callback
 from homeassistant.helpers.aiohttp_client import async_get_clientsession
 from homeassistant.helpers.selector import (
+    NumberSelector,
+    NumberSelectorConfig,
+    NumberSelectorMode,
     TextSelector,
     TextSelectorConfig,
     TextSelectorType,
@@ -23,7 +32,14 @@ from .api import (
     GitHubInsightsRateLimitError,
     is_valid_repository,
 )
-from .const import CONF_REPOSITORY, DOMAIN
+from .const import (
+    CONF_REPOSITORY,
+    CONF_UPDATE_INTERVAL,
+    DEFAULT_UPDATE_INTERVAL,
+    DOMAIN,
+    MAX_UPDATE_INTERVAL,
+    MIN_UPDATE_INTERVAL,
+)
 
 STEP_USER_DATA_SCHEMA = vol.Schema(
     {
@@ -68,6 +84,14 @@ class GitHubInsightsConfigFlow(ConfigFlow, domain=DOMAIN):
     """Handle a config flow for GitHub Insights."""
 
     VERSION = 1
+
+    @staticmethod
+    @callback
+    def async_get_options_flow(
+        config_entry: ConfigEntry,
+    ) -> GitHubInsightsOptionsFlow:
+        """Return the options flow handler."""
+        return GitHubInsightsOptionsFlow()
 
     @override
     async def async_step_user(
@@ -132,4 +156,37 @@ class GitHubInsightsConfigFlow(ConfigFlow, domain=DOMAIN):
             data_schema=STEP_REAUTH_DATA_SCHEMA,
             description_placeholders={CONF_REPOSITORY: repository},
             errors=errors,
+        )
+
+
+class GitHubInsightsOptionsFlow(OptionsFlow):
+    """Handle the options flow for GitHub Insights."""
+
+    async def async_step_init(
+        self, user_input: dict[str, Any] | None = None
+    ) -> ConfigFlowResult:
+        """Manage the update interval."""
+        if user_input is not None:
+            return self.async_create_entry(
+                data={CONF_UPDATE_INTERVAL: int(user_input[CONF_UPDATE_INTERVAL])}
+            )
+
+        current = self.config_entry.options.get(
+            CONF_UPDATE_INTERVAL, DEFAULT_UPDATE_INTERVAL
+        )
+        return self.async_show_form(
+            step_id="init",
+            data_schema=vol.Schema(
+                {
+                    vol.Required(CONF_UPDATE_INTERVAL, default=current): NumberSelector(
+                        NumberSelectorConfig(
+                            min=MIN_UPDATE_INTERVAL,
+                            max=MAX_UPDATE_INTERVAL,
+                            step=1,
+                            mode=NumberSelectorMode.BOX,
+                            unit_of_measurement="min",
+                        )
+                    ),
+                }
+            ),
         )

@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "GitHub-tároló hozzáadása",
+        "description": "Adjon meg egy személyes hozzáférési tokent és a követendő tárolót.",
+        "data": {
+          "access_token": "Hozzáférési token",
+          "repository": "Tároló"
+        },
+        "data_description": {
+          "access_token": "Egy GitHub személyes hozzáférési token. Egy nyilvános olvasási hozzáféréssel rendelkező részletes vagy klasszikus token 5000 kérésre/órára növeli a korlátot.",
+          "repository": "A követendő tároló tulajdonos/név formátumban (például home-assistant/core)."
+        }
+      },
+      "reauth_confirm": {
+        "title": "GitHub Insights újbóli hitelesítése",
+        "description": "A(z) {repository} tokene már nem érvényes. Adjon meg egy új hozzáférési tokent.",
+        "data": {
+          "access_token": "Hozzáférési token"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "A hozzáférési token érvénytelen, vagy hiányoznak a szükséges jogosultságok.",
+      "invalid_repository": "A tárolónak tulajdonos/név formátumot kell használnia.",
+      "repo_not_found": "A tároló nem található ezzel a tokennel.",
+      "rate_limit": "A GitHub API kéréskorlátja kimerült. Próbálja újra később.",
+      "cannot_connect": "Nem sikerült csatlakozni a GitHub API-hoz."
+    },
+    "abort": {
+      "already_configured": "Ez a tároló már konfigurálva van.",
+      "reauth_successful": "Az újbóli hitelesítés sikeres volt."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "GitHub Insights beállításai",
+        "description": "Állítsa be, milyen gyakran frissüljenek a tároló metrikái.",
+        "data": {
+          "update_interval": "Frissítési időköz (perc)"
+        },
+        "data_description": {
+          "update_interval": "Milyen gyakran kérdezze le a GitHub API-t, percben. A minimum 1 perc."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "Commitok"},
+      "releases": {"name": "Kiadások"},
+      "latest_release": {"name": "Legújabb kiadás"},
+      "latest_release_downloads": {"name": "Legújabb kiadás letöltései"},
+      "total_downloads": {"name": "Összes letöltés"},
+      "stargazers": {"name": "Csillagok"},
+      "followers": {"name": "Követők"},
+      "open_issues": {"name": "Nyitott hibajegyek"},
+      "closed_issues": {"name": "Lezárt hibajegyek"}
+    }
+  }
+}

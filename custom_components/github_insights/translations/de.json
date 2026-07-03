@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "GitHub-Repository hinzufügen",
+        "description": "Gib einen persönlichen Zugriffstoken und das zu verfolgende Repository ein.",
+        "data": {
+          "access_token": "Zugriffstoken",
+          "repository": "Repository"
+        },
+        "data_description": {
+          "access_token": "Ein persönlicher GitHub-Zugriffstoken. Ein fein abgestufter oder klassischer Token mit öffentlichem Lesezugriff erhöht das Ratenlimit auf 5000 Anfragen pro Stunde.",
+          "repository": "Das zu verfolgende Repository im Format Eigentümer/Name (zum Beispiel home-assistant/core)."
+        }
+      },
+      "reauth_confirm": {
+        "title": "GitHub Insights erneut authentifizieren",
+        "description": "Der Token für {repository} ist nicht mehr gültig. Gib einen neuen Zugriffstoken ein.",
+        "data": {
+          "access_token": "Zugriffstoken"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Der Zugriffstoken ist ungültig oder verfügt nicht über die erforderlichen Berechtigungen.",
+      "invalid_repository": "Das Repository muss das Format Eigentümer/Name verwenden.",
+      "repo_not_found": "Das Repository konnte mit diesem Token nicht gefunden werden.",
+      "rate_limit": "Das Ratenlimit der GitHub-API ist erschöpft. Versuche es später erneut.",
+      "cannot_connect": "Verbindung zur GitHub-API fehlgeschlagen."
+    },
+    "abort": {
+      "already_configured": "Dieses Repository ist bereits konfiguriert.",
+      "reauth_successful": "Die erneute Authentifizierung war erfolgreich."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "GitHub Insights-Optionen",
+        "description": "Lege fest, wie oft die Repository-Metriken aktualisiert werden.",
+        "data": {
+          "update_interval": "Aktualisierungsintervall (Minuten)"
+        },
+        "data_description": {
+          "update_interval": "Wie oft die GitHub-API abgefragt wird, in Minuten. Das Minimum beträgt 1 Minute."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "Commits"},
+      "releases": {"name": "Releases"},
+      "latest_release": {"name": "Neuestes Release"},
+      "latest_release_downloads": {"name": "Downloads des neuesten Releases"},
+      "total_downloads": {"name": "Downloads insgesamt"},
+      "stargazers": {"name": "Sterne"},
+      "followers": {"name": "Follower"},
+      "open_issues": {"name": "Offene Issues"},
+      "closed_issues": {"name": "Geschlossene Issues"}
+    }
+  }
+}

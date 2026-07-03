@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Добавяне на хранилище в GitHub",
+        "description": "Въведете личен токен за достъп и хранилището за проследяване.",
+        "data": {
+          "access_token": "Токен за достъп",
+          "repository": "Хранилище"
+        },
+        "data_description": {
+          "access_token": "Личен токен за достъп в GitHub. Детайлен или класически токен с достъп за четене на публични данни повишава лимита до 5000 заявки на час.",
+          "repository": "Хранилището за проследяване във формат собственик/име (например home-assistant/core)."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Повторно удостоверяване на GitHub Insights",
+        "description": "Токенът за {repository} вече не е валиден. Въведете нов токен за достъп.",
+        "data": {
+          "access_token": "Токен за достъп"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Токенът за достъп е невалиден или няма необходимите права.",
+      "invalid_repository": "Хранилището трябва да е във формат собственик/име.",
+      "repo_not_found": "Хранилището не може да бъде намерено с този токен.",
+      "rate_limit": "Лимитът на заявки към API на GitHub е изчерпан. Опитайте отново по-късно.",
+      "cannot_connect": "Неуспешно свързване с API на GitHub."
+    },
+    "abort": {
+      "already_configured": "Това хранилище вече е конфигурирано.",
+      "reauth_successful": "Повторното удостоверяване беше успешно."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Настройки на GitHub Insights",
+        "description": "Настройте колко често се обновяват показателите на хранилището.",
+        "data": {
+          "update_interval": "Интервал на обновяване (минути)"
+        },
+        "data_description": {
+          "update_interval": "Колко често да се извиква API на GitHub, в минути. Минимумът е 1 минута."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "Комити"},
+      "releases": {"name": "Издания"},
+      "latest_release": {"name": "Последно издание"},
+      "latest_release_downloads": {"name": "Изтегляния на последното издание"},
+      "total_downloads": {"name": "Общо изтегляния"},
+      "stargazers": {"name": "Звезди"},
+      "followers": {"name": "Последователи"},
+      "open_issues": {"name": "Отворени проблеми"},
+      "closed_issues": {"name": "Затворени проблеми"}
+    }
+  }
+}

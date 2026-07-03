@@ -1,0 +1,63 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Dodaj repozitorij GitHub",
+        "description": "Vnesite osebni dostopni žeton in repozitorij za spremljanje.",
+        "data": {
+          "access_token": "Dostopni žeton",
+          "repository": "Repozitorij"
+        },
+        "data_description": {
+          "access_token": "Osebni dostopni žeton GitHub. Podroben ali klasičen žeton z javnim dostopom za branje zviša omejitev zahtev na 5000 na uro.",
+          "repository": "Repozitorij za spremljanje v obliki lastnik/ime (na primer home-assistant/core)."
+        }
+      },
+      "reauth_confirm": {
+        "title": "Ponovna overitev GitHub Insights",
+        "description": "Žeton za {repository} ni več veljaven. Vnesite nov dostopni žeton.",
+        "data": {
+          "access_token": "Dostopni žeton"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Dostopni žeton je neveljaven ali nima zahtevanih dovoljenj.",
+      "invalid_repository": "Repozitorij mora biti v obliki lastnik/ime.",
+      "repo_not_found": "Repozitorija s tem žetonom ni bilo mogoče najti.",
+      "rate_limit": "Omejitev zahtev API GitHub je izčrpana. Poskusite znova pozneje.",
+      "cannot_connect": "Povezava z API GitHub ni uspela."
+    },
+    "abort": {
+      "already_configured": "Ta repozitorij je že konfiguriran.",
+      "reauth_successful": "Ponovna overitev je bila uspešna."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Možnosti GitHub Insights",
+        "description": "Prilagodite, kako pogosto se osvežujejo metrike repozitorija.",
+        "data": {
+          "update_interval": "Interval posodabljanja (minute)"
+        },
+        "data_description": {
+          "update_interval": "Kako pogosto poizvedovati po API GitHub, v minutah. Najmanj je 1 minuta."
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "commits": {"name": "Objave (commits)"},
+      "releases": {"name": "Izdaje"},
+      "latest_release": {"name": "Najnovejša izdaja"},
+      "latest_release_downloads": {"name": "Prenosi najnovejše izdaje"},
+      "total_downloads": {"name": "Skupno prenosov"},
+      "stargazers": {"name": "Zvezdice"},
+      "followers": {"name": "Sledilci"},
+      "open_issues": {"name": "Odprte težave"},
+      "closed_issues": {"name": "Zaprte težave"}
+    }
+  }
+}
