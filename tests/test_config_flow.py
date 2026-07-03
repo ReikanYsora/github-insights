@@ -142,3 +142,9 @@ async def test_reauth_flow(
     assert result["type"] is FlowResultType.ABORT
     assert result["reason"] == "reauth_successful"
     assert mock_config_entry.data[CONF_ACCESS_TOKEN] == "ghp_newtoken"
+
+    # The successful reauth reloads the entry, which starts a live coordinator.
+    # Let the reload finish and unload it so no polling timer lingers.
+    await hass.async_block_till_done()
+    await hass.config_entries.async_unload(mock_config_entry.entry_id)
+    await hass.async_block_till_done()
